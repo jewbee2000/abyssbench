@@ -1,6 +1,6 @@
 # AbyssBench specification
 
-Status: refined proposal; M0 baseline comparison is pending. No implementation or benchmark results are claimed. Read [REQUIREMENTS.md](REQUIREMENTS.md) first for priorities, rationale, external-user interfaces, and release gates.
+Status: deterministic offline implementation; executed software evidence is in [REQUIREMENT_EVIDENCE.md](../evidence/REQUIREMENT_EVIDENCE.md). M0 baseline and local performance measurements have run. Physical behavior, practitioner adoption and live-model evaluation remain unverified. Read [REQUIREMENTS.md](REQUIREMENTS.md) for priorities and applicability.
 
 
 ## Scope and physical model

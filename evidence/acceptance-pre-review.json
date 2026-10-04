@@ -6,13 +6,13 @@
     "-q",
     "--tb=short"
   ],
-  "exit_code": 1,
+  "exit_code": 0,
   "source": {
-    "code_commit": "938c4f754df14dfa0a2ecf634a4dd20b7867122e",
+    "code_commit": "6a48bf0cf75b95ea2b860c5561f0b3a1e4dffdc2",
     "dirty_tree": true,
-    "diff_hash": "060c91ef3dde4bc6c4bc783e42d3045d40de9845e5e2d9cbdb8252e1bc9677fa",
-    "code_hash": "942983b8cd0e3ebdd844d85fd9e8c8ede9442ae41fda274a9973c69580040c02",
-    "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+    "diff_hash": "51405d3ad54cd86912dd10d19279a4cf45d9651249533d33d1fecbf2a017ef46",
+    "code_hash": "f49ad701061b13e35ebb2d2dabbf7bf2f8337e9e573a9ad59187bb89a63afd5d",
+    "oracle_hash": "fc386ab5e0daac346d5a0f093e8f72333854d4afc6ed40d8f8adde1de4ceed38",
     "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
     "model_parameters": {
       "compliance": 1e-08,
@@ -28,18 +28,10 @@
     "controller_version": "fluid-v1"
   },
   "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
-  "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+  "oracle_hash": "fc386ab5e0daac346d5a0f093e8f72333854d4afc6ed40d8f8adde1de4ceed38",
   "results": [
     {
       "nodeid": "tests/acceptance/test_artifacts.py::test_incomplete_writer_and_corruption",
-      "phase": "call",
-      "outcome": "passed",
-      "requirement_ids": [
-        "AB-10"
-      ]
-    },
-    {
-      "nodeid": "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
       "phase": "call",
       "outcome": "passed",
       "requirement_ids": [
@@ -821,7 +813,7 @@
     {
       "nodeid": "tests/acceptance/test_release_evidence.py::test_case_event_limits_and_executed_performance",
       "phase": "call",
-      "outcome": "failed",
+      "outcome": "passed",
       "requirement_ids": [
         "AB-20"
       ]
@@ -849,30 +841,6 @@
       "outcome": "passed",
       "requirement_ids": [
         "AB-17"
-      ]
-    },
-    {
-      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[0]",
-      "phase": "call",
-      "outcome": "passed",
-      "requirement_ids": [
-        "AB-16"
-      ]
-    },
-    {
-      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[100]",
-      "phase": "call",
-      "outcome": "passed",
-      "requirement_ids": [
-        "AB-16"
-      ]
-    },
-    {
-      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[1500]",
-      "phase": "call",
-      "outcome": "passed",
-      "requirement_ids": [
-        "AB-16"
       ]
     },
     {
@@ -970,5 +938,5 @@
       ]
     }
   ],
-  "result_hash": "92a60a228faf03561f6eb6f0164ffc49a4e7a8e596ebc8b40c2837337da56e59"
+  "result_hash": "10cdc154f1d8f35ea1f068269de2e3250476f7735ad852e1b71a7aa855767b0a"
 }

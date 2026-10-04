@@ -1,6 +1,6 @@
 # AbyssBench requirements and rationale
 
-Revision 2026-10-04. Status: planned, not implemented. This audit supersedes the earlier unprioritized feature list. [requirements.json](../requirements.json) is the machine-readable register; [SPEC.md](SPEC.md) supplies detailed reference-case constants and contracts. Keep them synchronized.
+Revision 2026-10-04. Status: deterministic offline software verified; see evidence/REQUIREMENT_EVIDENCE.md. This audit supersedes the earlier unprioritized feature list. [requirements.json](../requirements.json) is the machine-readable register; [SPEC.md](SPEC.md) supplies detailed reference-case constants and contracts. Keep them synchronized.
 
 ## Purpose and practical value
 
@@ -46,7 +46,7 @@ The plant and clock reproduce the same event sequence for a fixed configuration,
 
 **Acceptance:** Compare canonical JSON event hashes across two runs; exclude wall-clock metadata.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_deterministic_time.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-02 — Must — M0
 
@@ -56,7 +56,7 @@ Sensors carry unit, sample time, receive time, quality, and provenance separatel
 
 **Acceptance:** Delay and replay packets; verify sample age is unchanged and unit mismatch is rejected.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_measurement_contract.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-03 — Must — M0
 
@@ -66,7 +66,7 @@ Arming, starting, stopping, and recovery follow the specified state graph.
 
 **Acceptance:** Table-test every state/event pair, including illegal starts and simultaneous stop/start.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_state_transitions.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-04 — Must — M2
 
@@ -76,7 +76,7 @@ Stale age >200 ms and future timestamps are detected using sample time.
 
 **Acceptance:** Test 199, 200, 201 ms ages and future timestamps; receiving an old packet cannot reset freshness.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_freshness.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-05 — Must — M2
 
@@ -86,7 +86,7 @@ A detected fault commands pump off and valve open within 10 ms.
 
 **Acceptance:** Independent event monitor measures detection-to-command latency under all fault schedules.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_safe_command_latency.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-06 — Must — M2
 
@@ -96,7 +96,7 @@ Reconnect cannot restart the stand and fault history remains latched.
 
 **Acceptance:** Disconnect during a run, reconnect, acknowledge, rearm; missing any recovery step blocks start.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_recovery_latch.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-07 — Must — M1
 
@@ -106,7 +106,7 @@ Expired and conflicting duplicate commands are rejected; exact duplicates are no
 
 **Acceptance:** Vary expiry around 100 ms and repeat IDs with identical and changed payloads.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_command_identity.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_contract.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-08 — Must — M2
 
@@ -116,7 +116,7 @@ All five fault types are injected deterministically and detected under their spe
 
 **Acceptance:** Scenario manifest includes onset, values, expected earliest detection, and exact required response.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_fault_coverage.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-09 — Must — M2
 
@@ -126,7 +126,7 @@ The monitor catches six seeded controller defects without using controller imple
 
 **Acceptance:** Freshness from receive time, inverted valve command, pressure unit mismatch, unsafe reconnect, unbounded retry, and lost latch each fail.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_mutation_detection.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_monitor_independence.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-10 — Must — M3
 
@@ -136,7 +136,7 @@ Run artifacts preserve hashes and identify interrupted runs as incomplete.
 
 **Acceptance:** Interrupt recording, corrupt an artifact, and reproduce a completed run from its manifest.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_recording_integrity.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-11 — Must — M2
 
@@ -146,7 +146,7 @@ Recipe validation and randomized event sequences preserve the invariant set.
 
 **Acceptance:** Reject nonfinite values and unknown units; run 1000 bounded Hypothesis sequences and store counterexamples.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_stateful_invariants.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_monitor_independence.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-12 — Must — M4
 
@@ -156,7 +156,7 @@ Offline demo and report work without hardware or credentials and disclose the si
 
 **Acceptance:** Fresh-install run verifies charts, fault times, and labels; all twelve invariants have assertions.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_reproducibility.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-13 — Must — M0
 
@@ -166,7 +166,7 @@ Compare pytest plus RTAMT and OpenHTF against the required replay and timing wor
 
 **Acceptance:** Use one stale-input and one reconnect scenario; document installed versions, configuration, timestamp semantics, reporting gaps, and reuse choices in docs/BASELINE.md. Prefer a small adapter/recipe library if existing tools satisfy the requirements.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_baseline_artifacts.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_replay.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-14 — Must — M1
 
@@ -176,7 +176,7 @@ Import versioned JSONL traces and CSV through an explicit column/unit map withou
 
 **Acceptance:** A separately authored trace produces the same verdict through both formats. Preserve raw sample and receive times; reject ambiguous units, missing required channels, and unsupported clock relationships.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_external_trace.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_replay.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-15 — Must — M2
 
@@ -186,7 +186,7 @@ A public Python controller adapter accepts measurements and a virtual tick and r
 
 **Acceptance:** A controller in a separate consumer directory runs without editing abyssbench source. Its command stream is judged by the independent monitor; no controller helper is imported into expected-value calculations.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_external_controller.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_external_controller.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-16 — Must — M2
 
@@ -196,7 +196,7 @@ Temporal verdicts are pass, fail, or inconclusive and state their observation wi
 
 **Acceptance:** A trace ending before a response deadline is inconclusive, never pass. Missing sample time cannot prove freshness. Reject unordered sequence IDs and unsupported cross-clock timestamps; check exact threshold boundaries. Streaming future-window rules remain pending until their deadlines.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_monitor_semantics.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_nonfinite_trace.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-17 — Must — M3
 
@@ -206,7 +206,7 @@ Reuse the same monitor and trace interface in a second, simple thermal-controlle
 
 **Acceptance:** Freeze a separate example specification with valid, violating, and incomplete traces. Configure channels and rules without changing the monitor engine or importing fluid-model code.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_second_example.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_replay.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-18 — Should — M3
 
@@ -216,7 +216,7 @@ Provide an OpenHTF integration example and optional Parquet export after the JSO
 
 **Acceptance:** The integration attaches requirement verdicts and artifacts to a test record; Parquet and JSONL retain identical timestamps and units.
 
-**Applies:** If selected after Must requirements pass **Planned evidence:** `tests/acceptance/test_openhtf_export.py`. **Status:** not implemented.
+**Applies:** If selected after Must requirements pass **Executed evidence:** `tests/acceptance/test_release_evidence.py`. **Status:** partial_deferred; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-19 — Must — M2
 
@@ -226,7 +226,7 @@ Publish a versioned input and result schema, stable requirement IDs, public Pyth
 
 **Acceptance:** For normal check commands: exit 0 only when every applicable required check passes; exit 1 for violations; exit 2 for invalid, incomplete, unsupported, or failed execution. Results preserve individual pass/fail/inconclusive/not_applicable states. The demo command separately verifies its expected negative cases. Unknown schema versions are rejected.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_public_contract.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-20 — Must — M4
 
@@ -236,7 +236,7 @@ Declare resource limits and measure repeatable performance for the supported wor
 
 **Acceptance:** During M0 freeze input-size/case limits and a target runtime with machine details. M4 records actual elapsed time and peak memory; an oversized input or elapsed-time limit produces a bounded error and incomplete result. CAD work runs in a killable worker. Compare against the baseline; do not claim universal performance.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_resource_limits.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-21 — Must — M4
 
@@ -246,7 +246,7 @@ Keep offline workflows local by default and document dependency, fixture, manual
 
 **Acceptance:** No credentials or telemetry are needed; the offline demo completes with egress disabled after installation. Source examples have provenance and redistributable licenses, or use a download recipe and lawful independently authored fixtures. Escape user text in HTML; reject output path traversal and avoid executing input data.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_data_and_license_boundaries.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_artifacts.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ### AB-22 — Must — M4
 
@@ -256,7 +256,7 @@ Demonstrate adoption from a separate clean consumer directory using only the doc
 
 **Acceptance:** Record a complete cold-start walkthrough: install, configure one non-default input, get an expected failure, correct it, and reproduce success without editing package source. Include actual commands, setup time, code/config size, and limitations versus the baseline. Label agent-executed walkthroughs as such; practitioner validation remains unverified until real feedback exists.
 
-**Applies:** Core v1 release **Planned evidence:** `tests/acceptance/test_consumer_walkthrough.py`. **Status:** not implemented.
+**Applies:** Core v1 release **Executed evidence:** `tests/acceptance/test_release_evidence.py`. **Status:** verified; executed evidence in ../evidence/REQUIREMENT_EVIDENCE.md.
 
 ## Explicit scope exclusions
 
@@ -292,7 +292,7 @@ Verification: Absent from the v1 supported-features list; README and reports do 
 
 ## Completion and actual usefulness
 
-Technical readiness requires passing evidence for every applicable Must requirement, explicit dispositions for Should items, a negative-case demonstration, a clean installation, and an external consumer example. A failing or inconclusive required check blocks a successful result. All planned test paths above are future work.
+Technical readiness requires passing evidence for every applicable Must requirement, explicit dispositions for Should items, a negative-case demonstration, a clean installation, and an external consumer example. A failing or inconclusive required check blocks a successful result. Actual executed paths and retained original planned paths are recorded in requirements.json.
 
 Practical usefulness is a separate hypothesis. Record the baseline comparison and the consumer walkthrough, including friction and limitations. A later independent engineer using the tool on their own driver, trace, or CAD assembly would be stronger evidence. Do not contact anyone or fabricate that validation. The first release may honestly be described as a useful candidate tool with demonstrated workflows, not a field-proven industry standard.
 

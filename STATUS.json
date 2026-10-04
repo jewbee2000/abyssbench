@@ -1,10 +1,17 @@
 {
-  "phase": "planning",
-  "implementation_started": false,
-  "application_tests_run": false,
+  "phase": "deterministic_offline_release_verified",
+  "implementation_started": true,
+  "application_tests_run": true,
   "live_model_evaluation_run": false,
   "physical_validation_run": false,
   "published": false,
   "requirements_revision": "2026-10-04",
-  "usefulness_validation": "desk_research_only_baseline_and_consumer_checks_pending"
+  "usefulness_validation": "installed_baseline_and_agent_executed_clean_consumer_verified; practitioner_adoption_unverified",
+  "must_requirements_verified": 21,
+  "full_suite_passed": 116,
+  "property_examples_configured": 1000,
+  "fresh_wheel_checks_passed": 115,
+  "should_disposition": "AB-18 OpenHTF passed; Parquet deferred",
+  "evidence": "evidence/REQUIREMENT_EVIDENCE.md",
+  "limitations": "single clock; synthetic uncalibrated plant; trusted callbacks; Windows/Python 3.12 verified; no physical or live model validation"
 }

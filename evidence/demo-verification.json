@@ -1,0 +1,222 @@
+{
+  "manifest_version": 1,
+  "status": "complete",
+  "code_commit": "0985f5cb79b032aa6ebb60b387d02a563d2c1fe8",
+  "dirty_tree": true,
+  "diff_hash": "76bed79a22327c1fc31db35c7bdb300c3206c46fd8bfc71de72db34be9227cb2",
+  "code_hash": "69014417be7e800fbb44cbccedf222e316af2c194fc04121cfe308e39cb3fadf",
+  "oracle_hash": "4064c30ab8b552febc82b93df4bd2383d289a0a7a5706c2e71515993348faba6",
+  "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+  "model_parameters": {
+    "compliance": 1e-08,
+    "pump_conductance": 1e-10,
+    "max_head_Pa": 300000,
+    "pump_tau_ms": 100,
+    "valve_tau_ms": 200,
+    "K_m3_s": 2e-05,
+    "P_ref_Pa": 100000
+  },
+  "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+  "event_schema_version": 1,
+  "controller_version": "fluid-v1",
+  "seed": 0,
+  "mode": "OFFLINE SYNTHETIC REPLAY",
+  "cases": [
+    {
+      "name": "healthy",
+      "fault": null,
+      "onset_ms": null,
+      "injection_parameters": {},
+      "expected_detection_ms": null,
+      "observed_detection_ms": null,
+      "controller_version": "fluid-v1",
+      "events": "healthy/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "stale-sensor",
+      "fault": "freeze",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "channels": [
+          "pressure1",
+          "pressure2",
+          "flow"
+        ],
+        "sample_time_ms": 450
+      },
+      "expected_detection_ms": 660,
+      "observed_detection_ms": 660,
+      "controller_version": "fluid-v1",
+      "events": "stale-sensor/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "stuck-valve",
+      "fault": "stuck",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "actuator": "valve",
+        "position": 0
+      },
+      "expected_detection_ms": 1010,
+      "observed_detection_ms": 1010,
+      "controller_version": "fluid-v1",
+      "events": "stuck-valve/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "disconnect",
+      "fault": "disconnect",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "connected": false,
+        "reconnect_ms": 700
+      },
+      "expected_detection_ms": 500,
+      "observed_detection_ms": 500,
+      "controller_version": "fluid-v1",
+      "events": "disconnect/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "out-of-range",
+      "fault": "range",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "channel": "pressure1",
+        "value": 310000,
+        "unit": "Pa"
+      },
+      "expected_detection_ms": 500,
+      "observed_detection_ms": 500,
+      "controller_version": "fluid-v1",
+      "events": "out-of-range/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "delayed-packet",
+      "fault": "delay",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "channels": [
+          "pressure1",
+          "pressure2",
+          "flow"
+        ],
+        "sample_time_ms": 100,
+        "receive_time_ms": 500
+      },
+      "expected_detection_ms": 500,
+      "observed_detection_ms": 500,
+      "controller_version": "fluid-v1",
+      "events": "delayed-packet/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    },
+    {
+      "name": "freshness_receive",
+      "fault": "freeze",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "channels": [
+          "pressure1",
+          "pressure2",
+          "flow"
+        ],
+        "sample_time_ms": 450
+      },
+      "expected_detection_ms": null,
+      "observed_detection_ms": null,
+      "controller_version": "freshness_receive",
+      "events": "freshness_receive/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "fail",
+      "expectations_met": true
+    },
+    {
+      "name": "repaired",
+      "fault": "freeze",
+      "onset_ms": 500,
+      "injection_parameters": {
+        "channels": [
+          "pressure1",
+          "pressure2",
+          "flow"
+        ],
+        "sample_time_ms": 450
+      },
+      "expected_detection_ms": 660,
+      "observed_detection_ms": 660,
+      "controller_version": "fluid-v1",
+      "events": "repaired/events.jsonl",
+      "required_safe_response": {
+        "pump": 0,
+        "valve": 1
+      },
+      "deadline_ms": 10,
+      "duration_ms": 1500,
+      "expected_status": "pass",
+      "expectations_met": true
+    }
+  ],
+  "artifacts": {
+    "healthy/events.jsonl": "468f0a5c326eba73e37fa0d5f94d82140adccd1edd3eda2cbb27ee128c56ed20",
+    "stale-sensor/events.jsonl": "ef03aa08b4db593aa2a7ed0740259eee736baecc274a2ad0584381d4ae494aca",
+    "stuck-valve/events.jsonl": "febda50efeaedab381ebf0920c2d10ee8eec48e66c5fd9aae0f8223b4b09d285",
+    "disconnect/events.jsonl": "9c951c899eda8f5986dba09d9b99f3c69ac3c2c1ac6770388717457ff05058d3",
+    "out-of-range/events.jsonl": "220161e32f1299d267db5370276867a9fca276ffaa19ea29e35363a24fd704b8",
+    "delayed-packet/events.jsonl": "132ec69aa7fe4d30cfb3866ae6c92735dd12f125697d195d9013aa3138adad99",
+    "freshness_receive/events.jsonl": "111737d8af6f09f37115ca06653552a50312d6d6c44b0f7bb60cbaa858ddf7c6",
+    "repaired/events.jsonl": "ef03aa08b4db593aa2a7ed0740259eee736baecc274a2ad0584381d4ae494aca",
+    "verdicts.json": "00f6c42abb291e13976c44f7964bb96395ed26af41897c7d3997573bd84210ed",
+    "report.html": "7c06055422d8a4ab549f614903a0621ce391ae9bcc62a6d0cd938ca7207740bc"
+  },
+  "expected_checks_passed": true
+}

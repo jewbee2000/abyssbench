@@ -1,0 +1,25 @@
+........................................................................ [ 62%]
+...........................................                              [100%]
+============================== warnings summary ===============================
+artifacts\consumer-manifest-final\.venv\Lib\site-packages\antlr4\Lexer.py:12
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\consumer-manifest-final\.venv\Lib\site-packages\antlr4\Lexer.py:12: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+artifacts\consumer-manifest-final\.venv\Lib\site-packages\antlr4\Parser.py:6
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\consumer-manifest-final\.venv\Lib\site-packages\antlr4\Parser.py:6: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\consumer-manifest-final\.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+115 passed, 1 deselected, 5 warnings in 13.58s

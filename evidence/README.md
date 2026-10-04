@@ -1,5 +1,13 @@
-# Evidence directory
+# Executed software evidence
 
-No application or live-model runs have been performed yet. This directory will contain real manifests, selected failures, and reports as implementation proceeds.
+Start with [REQUIREMENT_EVIDENCE.md](REQUIREMENT_EVIDENCE.md) for the 21 applicable Must requirements and [progress.md](progress.md) for the local milestone history and retained failures.
 
-Each manifest must identify run mode (deterministic, replay, live), source commit, dirty diff hash if any, requirement IDs, input and oracle hashes, environment versions, commands, exit codes, artifacts, and limitations. Live runs additionally record actual model/provider, attempts, tokens when available, time, budget, and costs when known. Preserve unavailable values as null; never replace them with invented zeros.
+- [acceptance-run.json](acceptance-run.json) and [pytest-final.txt](pytest-final.txt): full independent open suite, including the 1000-example property check.
+- [fresh-install-run.json](fresh-install-run.json): checks against a wheel installed in a new virtual environment.
+- [baseline.json](baseline.json) and [consumer-walkthrough.json](consumer-walkthrough.json): installed-library comparison and agent-executed non-default consumer failure/correction.
+- [performance.json](performance.json): three measured 10000-event repetitions, with method and comparison limits.
+- [environment.json](environment.json), [dependency-licenses.json](dependency-licenses.json), [release.json](release.json): versions, licenses, source/input/oracle/lock/artifact hashes and command outcomes.
+- failed-candidates/: six actual seeded controller failures. Files containing first-failure, before, or first-tests retain earlier unsuccessful checks; they are history, not current passing evidence.
+- [stuck-valve-report.png](stuck-valve-report.png) and blog preview images: inspected output, with command and actuator behavior distinct.
+
+All signals are synthetic. No physical validation, live model campaign or practitioner adoption occurred. The article remains unpublished. Command issuance and simulation timing do not prove physical response. Unknown campaign cost/token values are not represented as fabricated measurements.

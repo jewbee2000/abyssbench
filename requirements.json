@@ -1,171 +1,338 @@
 {
   "schema_version": 2,
   "project": "abyssbench",
-  "status": "planned",
+  "status": "deterministic_offline_release_verified",
   "requirements": [
     {
       "id": "AB-01",
       "requirement": "The plant and clock reproduce the same event sequence for a fixed configuration, seed, and fault schedule.",
       "acceptance": "Compare canonical JSON event hashes across two runs; exclude wall-clock metadata.",
-      "planned_test": "tests/acceptance/test_deterministic_time.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "An intermittent failure is actionable only if the inputs and event order can be reproduced.",
       "milestone": "M1",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_deterministic_time.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[delay-expected4]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[disconnect-expected1]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[freeze-expected0]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[range-expected2]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[stuck-expected3]",
+        "tests/acceptance/test_contract.py::test_healthy",
+        "tests/acceptance/test_monitor_independence.py::test_hand_calculated_plant_and_convergence"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-02",
       "requirement": "Sensors carry unit, sample time, receive time, quality, and provenance separately.",
       "acceptance": "Delay and replay packets; verify sample age is unchanged and unit mismatch is rejected.",
-      "planned_test": "tests/acceptance/test_measurement_contract.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Unit errors and confused sampling/receipt timestamps can invalidate otherwise correct control decisions.",
       "milestone": "M0",
       "applies_when": "Core v1 release",
-      "dependencies": []
+      "dependencies": [],
+      "original_planned_test": "tests/acceptance/test_measurement_contract.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[-1-future]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[199-valid]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[200-valid]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[201-stale]",
+        "tests/acceptance/test_replay.py::test_missing_sample_and_log_errors",
+        "tests/acceptance/test_replay.py::test_old_packet_is_data_not_structural_disorder"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-03",
       "requirement": "Arming, starting, stopping, and recovery follow the specified state graph.",
       "acceptance": "Table-test every state/event pair, including illegal starts and simultaneous stop/start.",
-      "planned_test": "tests/acceptance/test_state_transitions.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "An explicit transition table makes illegal starts and recovery paths reviewable.",
       "milestone": "M0",
       "applies_when": "Core v1 release",
-      "dependencies": []
+      "dependencies": [],
+      "original_planned_test": "tests/acceptance/test_state_transitions.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-running]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-armed]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-disconnected]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-fault]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-ready]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-recovery_required]",
+        "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-running]",
+        "tests/acceptance/test_contract.py::test_stop_wins_and_arm_start_are_separate"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-04",
       "requirement": "Stale age >200 ms and future timestamps are detected using sample time.",
       "acceptance": "Test 199, 200, 201 ms ages and future timestamps; receiving an old packet cannot reset freshness.",
-      "planned_test": "tests/acceptance/test_freshness.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "A delayed packet must not make stale sensor data appear fresh.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_freshness.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[-1-future]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[199-valid]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[200-valid]",
+        "tests/acceptance/test_contract.py::test_sample_age_boundaries[201-stale]"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-05",
       "requirement": "A detected fault commands pump off and valve open within 10 ms.",
       "acceptance": "Independent event monitor measures detection-to-command latency under all fault schedules.",
-      "planned_test": "tests/acceptance/test_safe_command_latency.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "A fault response needs a measurable deadline; issuing a command is distinct from reaching a physical state.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_safe_command_latency.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[delay-expected4]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[disconnect-expected1]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[freeze-expected0]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[range-expected2]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[stuck-expected3]"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-06",
       "requirement": "Reconnect cannot restart the stand and fault history remains latched.",
       "acceptance": "Disconnect during a run, reconnect, acknowledge, rearm; missing any recovery step blocks start.",
-      "planned_test": "tests/acceptance/test_recovery_latch.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Reconnect is transport recovery, not authorization to resume a potentially hazardous process.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_recovery_latch.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_recovery_requires_all_steps"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-07",
       "requirement": "Expired and conflicting duplicate commands are rejected; exact duplicates are not reapplied.",
       "acceptance": "Vary expiry around 100 ms and repeat IDs with identical and changed payloads.",
-      "planned_test": "tests/acceptance/test_command_identity.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_contract.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Delayed or repeated messages must not produce duplicate or outdated actions.",
       "milestone": "M1",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_command_identity.py",
+      "executed_tests": [
+        "tests/acceptance/test_contract.py::test_duplicate_and_conflicting_identity",
+        "tests/acceptance/test_contract.py::test_expiry_boundary[100-applied]",
+        "tests/acceptance/test_contract.py::test_expiry_boundary[101-expired]",
+        "tests/acceptance/test_contract.py::test_expiry_boundary[99-applied]"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-08",
       "requirement": "All five fault types are injected deterministically and detected under their specified conditions.",
       "acceptance": "Scenario manifest includes onset, values, expected earliest detection, and exact required response.",
-      "planned_test": "tests/acceptance/test_fault_coverage.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Each failure mode needs an independently specified onset and response.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_fault_coverage.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[delay-expected4]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[disconnect-expected1]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[freeze-expected0]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[range-expected2]",
+        "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[stuck-expected3]",
+        "tests/acceptance/test_contract.py::test_heartbeat_and_actuator_boundaries"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-09",
       "requirement": "The monitor catches six seeded controller defects without using controller implementation logic.",
       "acceptance": "Freshness from receive time, inverted valve command, pressure unit mismatch, unsafe reconnect, unbounded retry, and lost latch each fail.",
-      "planned_test": "tests/acceptance/test_mutation_detection.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_monitor_independence.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Deliberate controller defects test the monitor rather than merely the happy-path controller.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_mutation_detection.py",
+      "executed_tests": [
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I01]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I02]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I03]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I04]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I05]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I06]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I07]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I08]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I09]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I10]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I11]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I12]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[freshness_receive-freeze-I03]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[inverted_valve-range-I05]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[lost_latch-disconnect-I07]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[pressure_unit-None-I03]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[unbounded_retry-range-I04]",
+        "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[unsafe_reconnect-disconnect-I06]"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-10",
       "requirement": "Run artifacts preserve hashes and identify interrupted runs as incomplete.",
       "acceptance": "Interrupt recording, corrupt an artifact, and reproduce a completed run from its manifest.",
-      "planned_test": "tests/acceptance/test_recording_integrity.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "A partial or corrupted trace cannot justify a successful run.",
       "milestone": "M3",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_recording_integrity.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
+        "tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay",
+        "tests/acceptance/test_artifacts.py::test_incomplete_writer_and_corruption"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-11",
       "requirement": "Recipe validation and randomized event sequences preserve the invariant set.",
       "acceptance": "Reject nonfinite values and unknown units; run 1000 bounded Hypothesis sequences and store counterexamples.",
-      "planned_test": "tests/acceptance/test_stateful_invariants.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_monitor_independence.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "Sequences expose ordering bugs that isolated state tests miss.",
       "milestone": "M2",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_stateful_invariants.py",
+      "executed_tests": [
+        "tests/acceptance/test_monitor_independence.py::test_1000_bounded_sequences",
+        "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[duration]",
+        "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[inf]",
+        "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[nan]",
+        "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[unit]",
+        "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[unknown]"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-12",
       "requirement": "Offline demo and report work without hardware or credentials and disclose the simulation boundary.",
       "acceptance": "Fresh-install run verifies charts, fault times, and labels; all twelve invariants have assertions.",
-      "planned_test": "tests/acceptance/test_reproducibility.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "priority": "must",
       "rationale": "An engineer should be able to inspect the timeline without building a physical stand.",
       "milestone": "M4",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_reproducibility.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay",
+        "tests/acceptance/test_contract.py::test_healthy",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I01]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I02]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I03]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I04]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I05]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I06]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I07]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I08]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I09]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I10]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I11]",
+        "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I12]",
+        "tests/acceptance/test_release_evidence.py::test_executed_clean_consumer_walkthrough"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-13",
@@ -174,10 +341,15 @@
       "requirement": "Compare pytest plus RTAMT and OpenHTF against the required replay and timing workflow before introducing a new framework.",
       "rationale": "The useful contribution must be integration or clearer engineering evidence, not reimplementing test execution or temporal logic.",
       "acceptance": "Use one stale-input and one reconnect scenario; document installed versions, configuration, timestamp semantics, reporting gaps, and reuse choices in docs/BASELINE.md. Prefer a small adapter/recipe library if existing tools satisfy the requirements.",
-      "planned_test": "tests/acceptance/test_baseline_artifacts.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_replay.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
-      "dependencies": []
+      "dependencies": [],
+      "original_planned_test": "tests/acceptance/test_baseline_artifacts.py",
+      "executed_tests": [
+        "tests/acceptance/test_replay.py::test_installed_baseline_evidence"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-14",
@@ -186,12 +358,20 @@
       "requirement": "Import versioned JSONL traces and CSV through an explicit column/unit map without running the bundled plant.",
       "rationale": "Real engineers already have logs; requiring the pump simulator would make the tool a demonstration only.",
       "acceptance": "A separately authored trace produces the same verdict through both formats. Preserve raw sample and receive times; reject ambiguous units, missing required channels, and unsupported clock relationships.",
-      "planned_test": "tests/acceptance/test_external_trace.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_replay.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_external_trace.py",
+      "executed_tests": [
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[incomplete-inconclusive]",
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[valid-pass]",
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[violating-fail]",
+        "tests/acceptance/test_replay.py::test_missing_sample_and_log_errors"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-15",
@@ -201,11 +381,16 @@
       "rationale": "An engineer needs to test their controller, not only the bundled implementation.",
       "acceptance": "A controller in a separate consumer directory runs without editing abyssbench source. Its command stream is judged by the independent monitor; no controller helper is imported into expected-value calculations.",
       "planned_test": "tests/acceptance/test_external_controller.py",
-      "status": "not_implemented",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_external_controller.py",
+      "executed_tests": [
+        "tests/acceptance/test_external_controller.py::test_external_controller_only_public_interface"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-16",
@@ -214,12 +399,28 @@
       "requirement": "Temporal verdicts are pass, fail, or inconclusive and state their observation window and clock assumptions.",
       "rationale": "Incomplete traces and incompatible clocks are common sources of false assurance.",
       "acceptance": "A trace ending before a response deadline is inconclusive, never pass. Missing sample time cannot prove freshness. Reject unordered sequence IDs and unsupported cross-clock timestamps; check exact threshold boundaries. Streaming future-window rules remain pending until their deadlines.",
-      "planned_test": "tests/acceptance/test_monitor_semantics.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_nonfinite_trace.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_monitor_semantics.py",
+      "executed_tests": [
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+        "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-10-pass]",
+        "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-None-fail]",
+        "tests/acceptance/test_replay.py::test_deadline_and_pending_window[11-11-fail]",
+        "tests/acceptance/test_replay.py::test_deadline_and_pending_window[5-None-inconclusive]",
+        "tests/acceptance/test_replay.py::test_missing_sample_and_log_errors",
+        "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[0]",
+        "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[100]",
+        "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[1500]",
+        "tests/acceptance/test_replay.py::test_unknown_and_malformed_rules_rejected"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-17",
@@ -228,12 +429,20 @@
       "requirement": "Reuse the same monitor and trace interface in a second, simple thermal-controller example with stale-temperature and heater-off requirements.",
       "rationale": "A second domain is a concrete test that the public abstraction is reusable rather than hard-coded to a pump.",
       "acceptance": "Freeze a separate example specification with valid, violating, and incomplete traces. Configure channels and rules without changing the monitor engine or importing fluid-model code.",
-      "planned_test": "tests/acceptance/test_second_example.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_replay.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_second_example.py",
+      "executed_tests": [
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[incomplete-inconclusive]",
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[valid-pass]",
+        "tests/acceptance/test_replay.py::test_external_thermal_trace[violating-fail]",
+        "tests/acceptance/test_replay.py::test_generic_import_has_no_fluid_model_dependency"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-18",
@@ -242,12 +451,17 @@
       "requirement": "Provide an OpenHTF integration example and optional Parquet export after the JSONL/pytest workflow works.",
       "rationale": "This helps adoption in an existing station workflow but is not needed to prove the core tool.",
       "acceptance": "The integration attaches requirement verdicts and artifacts to a test record; Parquet and JSONL retain identical timestamps and units.",
-      "planned_test": "tests/acceptance/test_openhtf_export.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_release_evidence.py",
+      "status": "partial_deferred",
       "applies_when": "If selected after Must requirements pass",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_openhtf_export.py",
+      "executed_tests": [
+        "tests/acceptance/test_release_evidence.py::test_openhtf_requirement_attachment"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-19",
@@ -256,12 +470,24 @@
       "requirement": "Publish a versioned input and result schema, stable requirement IDs, public Python API, and a scriptable CLI with clear failure semantics.",
       "rationale": "CI must not confuse an unsupported check or crashed evaluator with a valid result.",
       "acceptance": "For normal check commands: exit 0 only when every applicable required check passes; exit 1 for violations; exit 2 for invalid, incomplete, unsupported, or failed execution. Results preserve individual pass/fail/inconclusive/not_applicable states. The demo command separately verifies its expected negative cases. Unknown schema versions are rejected.",
-      "planned_test": "tests/acceptance/test_public_contract.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_public_contract.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_cli_statuses[incomplete-2]",
+        "tests/acceptance/test_artifacts.py::test_cli_statuses[valid-0]",
+        "tests/acceptance/test_artifacts.py::test_cli_statuses[violating-1]",
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+        "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+        "tests/acceptance/test_release_evidence.py::test_result_schema_and_unsupported_trigger",
+        "tests/acceptance/test_replay.py::test_unknown_and_malformed_rules_rejected"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-20",
@@ -270,12 +496,18 @@
       "requirement": "Declare resource limits and measure repeatable performance for the supported workload in the pinned environment.",
       "rationale": "A tool that hangs or silently drops large input cannot be trusted in an engineering workflow.",
       "acceptance": "During M0 freeze input-size/case limits and a target runtime with machine details. M4 records actual elapsed time and peak memory; an oversized input or elapsed-time limit produces a bounded error and incomplete result. CAD work runs in a killable worker. Compare against the baseline; do not claim universal performance.",
-      "planned_test": "tests/acceptance/test_resource_limits.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_resource_limits.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_oversize_and_timeout",
+        "tests/acceptance/test_release_evidence.py::test_case_event_limits_and_executed_performance"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-21",
@@ -284,12 +516,18 @@
       "requirement": "Keep offline workflows local by default and document dependency, fixture, manual, and example licensing.",
       "rationale": "Engineers must be able to inspect data handling and legally reuse the code and examples.",
       "acceptance": "No credentials or telemetry are needed; the offline demo completes with egress disabled after installation. Source examples have provenance and redistributable licenses, or use a download recipe and lawful independently authored fixtures. Escape user text in HTML; reject output path traversal and avoid executing input data.",
-      "planned_test": "tests/acceptance/test_data_and_license_boundaries.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_artifacts.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_data_and_license_boundaries.py",
+      "executed_tests": [
+        "tests/acceptance/test_artifacts.py::test_offline_egress_and_html_escape",
+        "tests/acceptance/test_release_evidence.py::test_license_and_fixture_provenance"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     },
     {
       "id": "AB-22",
@@ -298,16 +536,21 @@
       "requirement": "Demonstrate adoption from a separate clean consumer directory using only the documented public interface.",
       "rationale": "A successful bundled demo alone is not evidence that another engineer can use the tool.",
       "acceptance": "Record a complete cold-start walkthrough: install, configure one non-default input, get an expected failure, correct it, and reproduce success without editing package source. Include actual commands, setup time, code/config size, and limitations versus the baseline. Label agent-executed walkthroughs as such; practitioner validation remains unverified until real feedback exists.",
-      "planned_test": "tests/acceptance/test_consumer_walkthrough.py",
-      "status": "not_implemented",
+      "planned_test": "tests/acceptance/test_release_evidence.py",
+      "status": "verified",
       "applies_when": "Core v1 release",
       "dependencies": [
         "AB-13"
-      ]
+      ],
+      "original_planned_test": "tests/acceptance/test_consumer_walkthrough.py",
+      "executed_tests": [
+        "tests/acceptance/test_release_evidence.py::test_executed_clean_consumer_walkthrough"
+      ],
+      "evidence": "evidence/acceptance-run.json"
     }
   ],
   "requirements_revision": "2026-10-04",
-  "decision_status": "refined_plan_not_implemented",
+  "decision_status": "deterministic_offline_release_verified",
   "exclusions": [
     {
       "id": "AB-W01",

@@ -1,6 +1,6 @@
 # AbyssBench implementation plan
 
-Revised 2026-10-04. Begin with [requirements and rationale](docs/REQUIREMENTS.md). The previous all-features-at-once plan is superseded by this useful-core-first sequence. Application implementation has not started.
+Implemented 2026-10-04 following this useful-core-first sequence. Begin with [requirements](docs/REQUIREMENTS.md), then [executed evidence](evidence/REQUIREMENT_EVIDENCE.md). Milestone history and deviations are in evidence/progress.md. The original 75–115 hour range below was a planning estimate, not measured human effort.
 
 ## Purpose and feasibility
 

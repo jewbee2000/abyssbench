@@ -1,6 +1,6 @@
 # Start here
 
-AbyssBench is currently a planning repository. The implementation agent should build the software, tests, and demonstration from these files. No application commands are implemented yet.
+AbyssBench now implements the deterministic offline release. Start with README.md for commands and evidence/REQUIREMENT_EVIDENCE.md for executed acceptance. The planning and specification files below remain the contract; evidence/progress.md records the implementation and retained failures. All publication and live-model work remain disabled.
 
 ## Read in order
 
@@ -18,7 +18,7 @@ Implement AbyssBench in this repository using START_HERE.md, docs/REQUIREMENTS.m
 
 Use a repo-local virtual environment and lock stable, compatible dependencies during M0. Python 3.12 is the preferred starting point, subject to the CAD stack's supported versions. No paid service is needed for the initial release. Install into the project, not global Python. Prefer uv if available; a standard virtual environment and pinned requirements are an acceptable fallback. Record actual versions rather than copying an unverified lockfile.
 
-The current preparation environment had Python 3.12.14 through the Codex runtime, Git, and Ruby available. The website bundle check passed, but rendering was blocked by a Jekyll runtime load error. uv, gh, and CMake were not found on the shell PATH. Docker's CLI existed but its daemon was unavailable. These are observations, not required changes to Walter's computer. The implementation session may have a different environment; check it before installing tools. Dependency downloads need network access. Generated-code experiments require real isolation; Docker is one option once operational, not a prerequisite for all deterministic modules.
+The implementation verified Python 3.12.14 through the Codex runtime and created a repository-local .venv with compatible pinned dependencies. See evidence/environment.json and requirements-lock.txt. uv was unavailable, so setup used standard venv and pip. Docker's CLI existed but its daemon was unavailable; untrusted generated-code execution and live model campaigns remain disabled. The earlier Jekyll preparation error did not recur: normal and explicit unpublished draft builds passed locally. These are recorded observations; recheck the environment before a new installation.
 
 ## Publication boundary
 

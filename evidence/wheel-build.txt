@@ -66,7 +66,7 @@ running install_egg_info
 Copying src\abyssbench.egg-info to build\bdist.win-amd64\wheel\.\abyssbench-0.1.0-py3.12.egg-info
 running install_scripts
 creating build\bdist.win-amd64\wheel\abyssbench-0.1.0.dist-info\WHEEL
-creating 'C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\dist\.tmp-0cvlvsb1\abyssbench-0.1.0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
+creating 'C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\dist\.tmp-_lcjpknk\abyssbench-0.1.0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
 adding 'abyssbench/__init__.py'
 adding 'abyssbench/__main__.py'
 adding 'abyssbench/_check_worker.py'

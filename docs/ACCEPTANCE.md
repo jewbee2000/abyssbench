@@ -1,6 +1,6 @@
 # Acceptance and evidence plan
 
-Status: test design only; no application tests have run. Read [REQUIREMENTS.md](REQUIREMENTS.md) for the full prioritized register, rationale, applicability, and acceptance criteria, and [SPEC.md](SPEC.md) for the reference-case contracts. [requirements.json](../requirements.json) provides planned test paths. Avoid a second independently edited requirements table.
+Status: executed independent open acceptance suite. Results, provenance and requirement mapping are in [REQUIREMENT_EVIDENCE.md](../evidence/REQUIREMENT_EVIDENCE.md) and acceptance-run.json. Read [REQUIREMENTS.md](REQUIREMENTS.md) and [SPEC.md](SPEC.md) for the contract. requirements.json records actual evidence paths; the original proposed one-file-per-requirement layout was consolidated into thematic test modules without changing expectations.
 
 ## Required layers
 

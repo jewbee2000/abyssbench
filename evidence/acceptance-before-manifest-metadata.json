@@ -6,13 +6,13 @@
     "-q",
     "--tb=short"
   ],
-  "exit_code": 1,
+  "exit_code": 0,
   "source": {
-    "code_commit": "938c4f754df14dfa0a2ecf634a4dd20b7867122e",
+    "code_commit": "d76ae39363b13ebe466b2e91fad7e5fc91131652",
     "dirty_tree": true,
-    "diff_hash": "060c91ef3dde4bc6c4bc783e42d3045d40de9845e5e2d9cbdb8252e1bc9677fa",
-    "code_hash": "942983b8cd0e3ebdd844d85fd9e8c8ede9442ae41fda274a9973c69580040c02",
-    "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+    "diff_hash": "96c505d9cd02d32de1fe546d520d3e4061a346bb418cb3525547d957f0ff9118",
+    "code_hash": "790ccbc69e334efc10267d15650996fb71e1992a0299c01e2d08d85f54522b8d",
+    "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
     "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
     "model_parameters": {
       "compliance": 1e-08,
@@ -28,7 +28,7 @@
     "controller_version": "fluid-v1"
   },
   "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
-  "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+  "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
   "results": [
     {
       "nodeid": "tests/acceptance/test_artifacts.py::test_incomplete_writer_and_corruption",
@@ -803,6 +803,33 @@
       ]
     },
     {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
       "nodeid": "tests/acceptance/test_release_evidence.py::test_openhtf_requirement_attachment",
       "phase": "call",
       "outcome": "passed",
@@ -821,7 +848,7 @@
     {
       "nodeid": "tests/acceptance/test_release_evidence.py::test_case_event_limits_and_executed_performance",
       "phase": "call",
-      "outcome": "failed",
+      "outcome": "passed",
       "requirement_ids": [
         "AB-20"
       ]
@@ -970,5 +997,5 @@
       ]
     }
   ],
-  "result_hash": "92a60a228faf03561f6eb6f0164ffc49a4e7a8e596ebc8b40c2837337da56e59"
+  "result_hash": "7256cd16b5ea20561085e6f691adb47e998d574632ca56a21244b38785a70533"
 }

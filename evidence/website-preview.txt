@@ -1,0 +1,49 @@
+Configuration file: C:/Users/Walt/Documents/Codex/2026-10-03/g/outputs/website-drafts/_config.yml
+            Source: C:/Users/Walt/Documents/Codex/2026-10-03/g/outputs/website-drafts
+       Destination: ../projects/abyssbench/artifacts/website-normal-preview
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+       Jekyll Feed: Generating feed for posts
+         AutoPages: Disabled/Not configured in site.config.
+        Pagination: Complete, processed 1 pagination page(s)
+
+Filename                             | Count |  Bytes |  Time
+-------------------------------------+-------+--------+------
+_layouts/default.html                |    13 | 95.56K | 0.105
+_includes/head.html                  |    13 | 32.58K | 0.075
+feed.xml                             |     1 | 20.26K | 0.069
+.html                                |     5 | 20.88K | 0.030
+_layouts/post.html                   |     5 | 18.79K | 0.019
+_includes/pagination.html            |     5 |  3.55K | 0.015
+_layouts/page.html                   |     5 | 23.03K | 0.012
+sitemap.xml                          |     1 |  3.31K | 0.011
+cv.md                                |     1 |  8.33K | 0.008
+_includes/particles-home.html        |     1 |  3.65K | 0.008
+_includes/contact.html               |     1 |  2.40K | 0.006
+_includes/footer.html                |    12 |  1.66K | 0.004
+_includes/postlist.html              |     5 | 17.00K | 0.003
+_layouts/cv.html                     |     1 |  9.74K | 0.003
+_includes/header.html                |    11 |  2.66K | 0.003
+_layouts/home.html                   |     1 |  1.96K | 0.003
+_includes/particles-404.html         |     1 |  0.60K | 0.002
+index.md                             |     1 |  1.57K | 0.002
+_includes/archive.html               |     1 |  1.12K | 0.001
+robots.txt                           |     1 |  0.05K | 0.000
+_includes/svg/nav-arrow-left.svg     |     5 |  1.25K | 0.000
+_includes/svg/nav-arrow-right.svg    |     5 |  1.24K | 0.000
+_includes/svg/internet.svg           |     1 |  0.69K | 0.000
+_includes/svg/github.svg             |     1 |  0.54K | 0.000
+_includes/svg/arrow-left-circled.svg |     1 |  0.34K | 0.000
+_includes/toggler.html               |     1 |  0.11K | 0.000
+_includes/svg/pin-alt.svg            |     1 |  0.38K | 0.000
+_includes/svg/facebook.svg           |     1 |  0.30K | 0.000
+_includes/svg/linkedin.svg           |     1 |  0.47K | 0.000
+_includes/svg/mail.svg               |     1 |  0.37K | 0.000
+_includes/svg/instagram.svg          |     1 |  0.50K | 0.000
+_includes/svg/phone.svg              |     1 |  0.46K | 0.000
+_includes/svg/cv-circled.svg         |     1 |  0.69K | 0.000
+_includes/svg/nav-arrow-down.svg     |     1 |  0.25K | 0.000
+
+ 
+                    done in 1.36 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
