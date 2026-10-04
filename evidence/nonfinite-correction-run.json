@@ -1,0 +1,62 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_nonfinite_trace.py"
+  ],
+  "exit_code": 0,
+  "source": {
+    "code_commit": "1e7cf1d8d1d63d9657b18e844cff3c7c251a3fb9",
+    "dirty_tree": true,
+    "diff_hash": "ebccfd2a547773af6b3e4f5c50b95497c7c4013168cdca819d56becce9d960ab",
+    "code_hash": "790ccbc69e334efc10267d15650996fb71e1992a0299c01e2d08d85f54522b8d",
+    "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    }
+  ],
+  "result_hash": "b9f08c57daee570491ba7e84a64c5c03ec494fa43c65ca85a7fab6c21d4bd743"
+}

@@ -1,0 +1,63 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_nonfinite_trace.py",
+    "--tb=short"
+  ],
+  "exit_code": 1,
+  "source": {
+    "code_commit": "1e7cf1d8d1d63d9657b18e844cff3c7c251a3fb9",
+    "dirty_tree": true,
+    "diff_hash": "c3935051476841f88ab9ee5fd16d88896ceaae3d787cda109372b4d6c75fb6ef",
+    "code_hash": "942983b8cd0e3ebdd844d85fd9e8c8ede9442ae41fda274a9973c69580040c02",
+    "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "f55a787e2e6915001d91c9bd2ccbe5fa124cfac11af43f106375ed9e0c611a3a",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    }
+  ],
+  "result_hash": "8fb3527a5e4a719f5e0c5e00bc0e4951cd60f1ec22e9a8dfac7e4e881a4282a6"
+}

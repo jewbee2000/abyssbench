@@ -1,6 +1,7 @@
 """Non-executable bounded trace import; ordered logs retain unordered packets."""
 import csv
 import json
+import math
 import time
 from pathlib import Path
 from typing import Any
@@ -14,6 +15,16 @@ MAX_EVENTS = 100000
 MAX_SECONDS = 60.0
 SCHEMAS = Path(__file__).parent / 'schemas'
 EVENT_VALIDATOR = Draft202012Validator(json.loads((SCHEMAS / 'event-v1.json').read_text()))
+
+
+def has_nonfinite(value):
+    if isinstance(value, float):
+        return not math.isfinite(value)
+    if isinstance(value, dict):
+        return any(has_nonfinite(v) for v in value.values())
+    if isinstance(value, list):
+        return any(has_nonfinite(v) for v in value)
+    return False
 
 
 def load_json(path):
@@ -35,6 +46,8 @@ def validate_events(events, *, seconds=MAX_SECONDS):
     for index, item in enumerate(events):
         if time.perf_counter() - started > seconds:
             raise InputError('elapsed-time limit; incomplete')
+        if has_nonfinite(item):
+            raise InputError(f'event {index}: nonfinite numeric evidence')
         error = next(EVENT_VALIDATOR.iter_errors(item), None)
         if error:
             raise InputError(f'event {index}: {error.message}')
