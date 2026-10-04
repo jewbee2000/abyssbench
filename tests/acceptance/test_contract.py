@@ -20,8 +20,8 @@ def readings(now, sample=None, pressure=1000, quality='good', unit='Pa'):
 
 
 def tick(now, requests=(), **kwargs):
-    defaults = dict(measurements=readings(now), connected=True, heartbeat_ms=now,
-                    valve_position=1.0, requests=tuple(requests))
+    defaults = {'measurements': readings(now), 'connected': True, 'heartbeat_ms': now,
+                'valve_position': 1.0, 'requests': tuple(requests)}
     defaults.update(kwargs)
     return Tick(now, **defaults)
 

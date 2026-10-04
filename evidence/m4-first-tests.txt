@@ -1,4 +1,5 @@
-.                                                                        [100%]
+........................................................................ [ 67%]
+..................................                                       [100%]
 ============================== warnings summary ===============================
 .venv\Lib\site-packages\antlr4\Lexer.py:12
   C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Lexer.py:12: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
@@ -21,4 +22,4 @@
     from typing.io import TextIO
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-1 passed, 94 deselected, 5 warnings in 55.06s
+106 passed, 1 deselected, 5 warnings in 12.97s

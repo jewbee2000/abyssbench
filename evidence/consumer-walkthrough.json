@@ -1,0 +1,200 @@
+{
+  "label": "Agent-executed clean consumer walkthrough, not practitioner validation",
+  "setup_elapsed_seconds": 54.041464000001724,
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+        "-m",
+        "venv",
+        ".venv"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 5.667320499997004,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\requirements-lock.txt"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 41.78860010000062,
+      "stdout_tail": "ma, charset-normalizer, certifi, attrs, ast_serialize, sockjs-tornado, requests, referencing, pytest, pyasn1_modules, mypy, cffi, build, jsonschema-specifications, cryptography, pyOpenSSL, jsonschema, google-auth, openhtf\n  Attempting uninstall: pip\n    Found existing installation: pip 25.0.1\n    Uninstalling pip-25.0.1:\n      Successfully uninstalled pip-25.0.1\nSuccessfully installed PyYAML-6.0.3 Pygments-2.21.0 antlr4-python3-runtime-4.7 ast_serialize-0.12.1 attrs-26.1.0 build-1.6.1 certifi-2026.7.22 cffi-2.1.1 charset-normalizer-3.5.2 colorama-0.4.6 contextlib2-21.6.0 cryptography-50.0.2 google-auth-2.59.1 hypothesis-6.168.3 idna-3.20 inflection-0.5.1 iniconfig-2.3.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 librt-0.16.0 mutablerecords-0.4.1 mypy-2.4.0 mypy_extensions-1.1.0 openhtf-1.6.1 packaging-26.3 pathspec-1.1.1 pip-25.3 pluggy-1.6.0 protobuf-7.36.2 psutil-7.2.2 pyOpenSSL-26.4.0 pyasn1-0.6.4 pyasn1_modules-0.4.2 pycparser-3.0 pyproject_hooks-1.3.3 pytest-9.1.1 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 rtamt-0.4.10 ruff-0.16.10 setuptools-80.9.0 sockjs-tornado-1.0.7 sortedcontainers-2.4.0 tornado-6.4.2 typing_extensions-4.16.0 urllib3-2.8.0 wheel-0.45.1\n",
+      "stderr_tail": "\n[notice] A new release of pip is available: 25.3 -> 26.2.1\n[notice] To update, run: C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe -m pip install --upgrade pip\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\dist\\abyssbench-0.1.0-py3-none-any.whl"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.312905699996918,
+      "stdout_tail": "Processing c:\\users\\walt\\documents\\codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\dist\\abyssbench-0.1.0-py3-none-any.whl\nInstalling collected packages: abyssbench\nSuccessfully installed abyssbench-0.1.0\n",
+      "stderr_tail": "\n[notice] A new release of pip is available: 25.3 -> 26.2.1\n[notice] To update, run: C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe -m pip install --upgrade pip\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9419543000039994,
+      "stdout_tail": "No broken requirements found.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "abyssbench",
+        "check",
+        "failed.jsonl",
+        "--rules",
+        "rules.json",
+        "--result",
+        "failed-verdict.json"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 1,
+      "elapsed_seconds": 0.9837955000039074,
+      "stdout_tail": "{\"schema_version\": 1, \"status\": \"fail\", \"window_ms\": [0, 162], \"clock_assumptions\": \"single monotonic simulation clock; integer ms; no extrapolation\", \"checks\": [{\"id\": \"USER-AGE\", \"status\": \"fail\", \"details\": [{\"trigger_ms\": 132, \"deadline_ms\": 162, \"observed_ms\": null, \"latency_ms\": null, \"evidence_kind\": \"command\"}, {\"trigger_ms\": 162, \"deadline_ms\": 192, \"observed_ms\": null, \"latency_ms\": null, \"evidence_kind\": \"command\"}]}, {\"id\": \"USER-RANGE\", \"status\": \"pass\", \"details\": []}], \"input_hash\": \"b559ce34baa21b6c2bc736b9b26c829755cef658cf90f9fddd7e5abfbad328f4\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "abyssbench",
+        "check",
+        "corrected.jsonl",
+        "--rules",
+        "rules.json",
+        "--result",
+        "corrected-verdict.json"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.7804669000033755,
+      "stdout_tail": "{\"schema_version\": 1, \"status\": \"pass\", \"window_ms\": [0, 162], \"clock_assumptions\": \"single monotonic simulation clock; integer ms; no extrapolation\", \"checks\": [{\"id\": \"USER-AGE\", \"status\": \"pass\", \"details\": [{\"trigger_ms\": 132, \"deadline_ms\": 162, \"observed_ms\": 162, \"latency_ms\": 30, \"evidence_kind\": \"command\"}, {\"trigger_ms\": 162, \"deadline_ms\": 192, \"observed_ms\": 162, \"latency_ms\": 0, \"evidence_kind\": \"command\"}]}, {\"id\": \"USER-RANGE\", \"status\": \"pass\", \"details\": []}], \"input_hash\": \"419cf1334c5dd7619c6103c93bcd5047abb7bc621a1569d067cc7572d8e5fbe5\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "exercise.py"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4771811999962665,
+      "stdout_tail": "pass\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "abyssbench",
+        "demo",
+        "--offline",
+        "--output",
+        "demo"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6081051000001025,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer\\.venv\\Scripts\\python.exe",
+        "-m",
+        "abyssbench",
+        "verify",
+        "demo"
+      ],
+      "cwd": "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\artifacts\\consumer",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4767223000017111,
+      "stdout_tail": "pump\": 0,\n        \"valve\": 1\n      },\n      \"deadline_ms\": 10,\n      \"duration_ms\": 1500,\n      \"expected_status\": \"pass\",\n      \"expectations_met\": true\n    }\n  ],\n  \"artifacts\": {\n    \"healthy/events.jsonl\": \"468f0a5c326eba73e37fa0d5f94d82140adccd1edd3eda2cbb27ee128c56ed20\",\n    \"stale-sensor/events.jsonl\": \"ef03aa08b4db593aa2a7ed0740259eee736baecc274a2ad0584381d4ae494aca\",\n    \"stuck-valve/events.jsonl\": \"febda50efeaedab381ebf0920c2d10ee8eec48e66c5fd9aae0f8223b4b09d285\",\n    \"disconnect/events.jsonl\": \"9c951c899eda8f5986dba09d9b99f3c69ac3c2c1ac6770388717457ff05058d3\",\n    \"out-of-range/events.jsonl\": \"220161e32f1299d267db5370276867a9fca276ffaa19ea29e35363a24fd704b8\",\n    \"delayed-packet/events.jsonl\": \"132ec69aa7fe4d30cfb3866ae6c92735dd12f125697d195d9013aa3138adad99\",\n    \"freshness_receive/events.jsonl\": \"111737d8af6f09f37115ca06653552a50312d6d6c44b0f7bb60cbaa858ddf7c6\",\n    \"repaired/events.jsonl\": \"ef03aa08b4db593aa2a7ed0740259eee736baecc274a2ad0584381d4ae494aca\",\n    \"verdicts.json\": \"00f6c42abb291e13976c44f7964bb96395ed26af41897c7d3997573bd84210ed\",\n    \"report.html\": \"a049a34f90a222ebc7fd7c560df3e3ae8b058ba044ab1eba55094bc958860b03\"\n  },\n  \"expected_checks_passed\": true\n}\n",
+      "stderr_tail": ""
+    }
+  ],
+  "source": {
+    "code_commit": "20982ca44ea5f5cca39cc53845cd23c77dfb7724",
+    "dirty_tree": true,
+    "diff_hash": "9c208362e245719b2e1ad4116326edc24006fdc675d3987cfccffc8823725cc3",
+    "oracle_hash": "9b25326f8ccdbe215dc1469da701cb7aa5bf8373d231fee5e67dbabf318f5187",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "wheel_hash": "7903939307d27c95ce1fce44d54e8a664fb660ba544b5a45a33042fd9110103f",
+  "trace_hashes": {
+    "failed": "b07f04f664e0edefee206fd9195fa20bcf21827a54320abb0e5be6864fda6c32",
+    "corrected": "efa5ea343fb7c9597a45a97bfcc968846a9cb6b13c8ba18ae12afe8032211c8e"
+  },
+  "consumer_files": {
+    "controller.py": {
+      "bytes": 1506,
+      "lines": 34
+    },
+    "corrected-verdict.json": {
+      "bytes": 829,
+      "lines": 37
+    },
+    "corrected.jsonl": {
+      "bytes": 858,
+      "lines": 6
+    },
+    "exercise.py": {
+      "bytes": 218,
+      "lines": 5
+    },
+    "failed-verdict.json": {
+      "bytes": 836,
+      "lines": 37
+    },
+    "failed.jsonl": {
+      "bytes": 858,
+      "lines": 6
+    },
+    "rules.json": {
+      "bytes": 435,
+      "lines": 25
+    }
+  },
+  "outcomes": {
+    "failed": "fail",
+    "corrected": "pass",
+    "external_controller": "pass",
+    "fresh_demo": "pass"
+  },
+  "limits": "Single clock, JSON payload column for CSV, trusted Python callback; no practitioner feedback. Raw baseline needs no wheel but requires manual provenance/window/report glue."
+}

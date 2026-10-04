@@ -1,7 +1,8 @@
 """Deterministic synthetic fluid plant and trusted controller adapter."""
-from dataclasses import dataclass
 import math
 import random
+from dataclasses import dataclass
+from typing import Any
 
 from .contracts import Command, Controller, InputError, Measurement, Tick, finite
 from .controller import FluidController
@@ -53,8 +54,8 @@ def run(controller: Controller | None = None, *, fault=None, seed=0, duration_ms
     rng = random.Random(seed)
     plant = Plant()
     outputs = {'pump': 0.0, 'valve': 1.0}
-    readings = {}
-    events = []
+    readings: dict[str, Measurement] = {}
+    events: list[dict[str, Any]] = []
     if requests is None:
         requests = {t: [Command(f'{name}-{t}', name, {}, t, t + 100)]
                     for t, name in [(10, 'arm'), (20, 'start'), (1450, 'stop')]}

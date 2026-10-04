@@ -1,6 +1,6 @@
 """Public immutable controller boundary and strict recipe validation."""
-from dataclasses import asdict, dataclass, field
 import math
+from dataclasses import asdict, dataclass, field
 from typing import Any, Protocol
 
 

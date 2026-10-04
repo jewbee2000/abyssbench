@@ -1,8 +1,9 @@
 """Non-executable bounded trace import; ordered logs retain unordered packets."""
 import csv
 import json
-from pathlib import Path
 import time
+from pathlib import Path
+from typing import Any
 
 from jsonschema import Draft202012Validator
 
@@ -46,9 +47,8 @@ def validate_events(events, *, seconds=MAX_SECONDS):
             d = item['data']
             if not finite(d['value']) or d['receive_time_ms'] != item['time_ms']:
                 raise InputError('measurement must be finite with event time equal to receive time')
-        if item['kind'] == 'command':
-            if not item['data'] or any(not finite(v) for v in item['data'].values()):
-                raise InputError('commands require finite numeric actuator fractions')
+        if item['kind'] == 'command' and (not item['data'] or any(not finite(v) for v in item['data'].values())):
+            raise InputError('commands require finite numeric actuator fractions')
     return events
 
 
@@ -68,7 +68,7 @@ def read_jsonl(path, *, units=None):
     path = Path(path)
     if path.stat().st_size > MAX_BYTES:
         raise InputError('input exceeds 20 MiB; incomplete')
-    events = []
+    events: list[dict[str, Any]] = []
     started = time.perf_counter()
     try:
         with path.open(encoding='utf-8-sig') as source:
@@ -94,7 +94,7 @@ def read_csv(path, column_map):
     path = Path(path)
     if path.stat().st_size > MAX_BYTES:
         raise InputError('input exceeds 20 MiB; incomplete')
-    events = []
+    events: list[dict[str, Any]] = []
     started = time.perf_counter()
     try:
         with path.open(newline='', encoding='utf-8-sig') as source:
@@ -120,5 +120,4 @@ def read_csv(path, column_map):
 def write_jsonl(path, events):
     validate_events(events)
     with Path(path).open('w', encoding='utf-8', newline='\n') as output:
-        for e in events:
-            output.write(json.dumps(e, sort_keys=True, separators=(',', ':'), allow_nan=False) + '\n')
+        output.writelines(json.dumps(e, sort_keys=True, separators=(',', ':'), allow_nan=False) + '\n' for e in events)

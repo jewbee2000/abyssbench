@@ -1,0 +1,78 @@
+{
+  "event_count": 10000,
+  "input_hash": "73650e4384a4e21a47f44c963f6edc5f2b34046f6d0d9bf94414b944d3329545",
+  "source": {
+    "code_commit": "20982ca44ea5f5cca39cc53845cd23c77dfb7724",
+    "dirty_tree": true,
+    "diff_hash": "372dfe6e470c4d2b49c14f6951f0677bc29c425c3706b32031976054e73a9d62",
+    "oracle_hash": "067cdee75dc8142f1928b4a99e241e2ac7d4410d4f0e3d36542ca1aeab812f55",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "method": "perf_counter; RSS sampled every 5 ms in same warmed process; 3 sequential repetitions; includes live Python heap, excludes child processes",
+  "comparison_limit": "RTAMT/OpenHTF pressure-only baselines do less work than full replay evaluator; no speedup claim",
+  "results": {
+    "full_event_validation_and_12_invariants": [
+      {
+        "elapsed_seconds": 1.266636499996821,
+        "peak_rss_bytes": 51138560,
+        "result": "pass"
+      },
+      {
+        "elapsed_seconds": 1.2602362999969046,
+        "peak_rss_bytes": 51421184,
+        "result": "pass"
+      },
+      {
+        "elapsed_seconds": 1.2748958000011044,
+        "peak_rss_bytes": 51445760,
+        "result": "pass"
+      }
+    ],
+    "rtamt_pressure_predicate_only": [
+      {
+        "elapsed_seconds": 0.0018897000045399182,
+        "peak_rss_bytes": 51445760,
+        "result": "pass"
+      },
+      {
+        "elapsed_seconds": 0.001312200001848396,
+        "peak_rss_bytes": 51445760,
+        "result": "pass"
+      },
+      {
+        "elapsed_seconds": 0.0012634000013349578,
+        "peak_rss_bytes": 51437568,
+        "result": "pass"
+      }
+    ],
+    "openhtf_phase_plus_pressure_predicate": [
+      {
+        "elapsed_seconds": 0.01564679999864893,
+        "peak_rss_bytes": 51474432,
+        "result": "PASS"
+      },
+      {
+        "elapsed_seconds": 0.004598799998348113,
+        "peak_rss_bytes": 51470336,
+        "result": "PASS"
+      },
+      {
+        "elapsed_seconds": 0.00435039999865694,
+        "peak_rss_bytes": 51453952,
+        "result": "PASS"
+      }
+    ]
+  }
+}

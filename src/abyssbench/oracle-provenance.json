@@ -1,0 +1,20 @@
+{
+  "code_commit": "20982ca44ea5f5cca39cc53845cd23c77dfb7724",
+  "dirty_tree": true,
+  "diff_hash": "b98e4dc5fd27ddbbbbe2d0aacae77d870b7ea1bcfbc3147c093185dd01ab39ba",
+  "oracle_hash": "9b25326f8ccdbe215dc1469da701cb7aa5bf8373d231fee5e67dbabf318f5187",
+  "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+  "model_parameters": {
+    "compliance": 1e-08,
+    "pump_conductance": 1e-10,
+    "max_head_Pa": 300000,
+    "pump_tau_ms": 100,
+    "valve_tau_ms": 200,
+    "K_m3_s": 2e-05,
+    "P_ref_Pa": 100000
+  },
+  "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+  "event_schema_version": 1,
+  "controller_version": "fluid-v1",
+  "label": "Open agent-authored independent acceptance suite; no live campaign"
+}

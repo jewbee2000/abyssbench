@@ -8,4 +8,7 @@ __pycache__/
 .env.*
 !.env.example
 artifacts/
+build/
+*.egg-info/
+.hypothesis/
 .DS_Store

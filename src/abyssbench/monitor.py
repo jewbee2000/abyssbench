@@ -3,16 +3,17 @@
 RTAMT supplies numeric range robustness. A finite event ledger supplies
 bounded response, identity and history evidence without inventing a DSL.
 """
+import json
+import time
 from bisect import bisect_left
 from collections import defaultdict
 from itertools import groupby
-import json
-import time
+from typing import Any
 
-from jsonschema import Draft202012Validator
 import rtamt
+from jsonschema import Draft202012Validator
 
-from .contracts import InputError
+from .contracts import InputError, finite
 from .trace import MAX_SECONDS, SCHEMAS, check_channels, validate_events
 
 
@@ -71,7 +72,7 @@ class Ledger:
 
 def frames(events):
     measurements = {}
-    state = {'state': None, 'history': []}
+    state: dict[str, Any] = {'state': None, 'history': []}
     connection = None
     heartbeat = None
     valve = None
@@ -112,6 +113,14 @@ def generic(ledger, rows, config):
         identity = rule['id']
         ledger.init(identity)
         kind = rule['type']
+        if any(not finite(v) for k, v in rule.items() if k in ('min', 'max', 'max_age_ms', 'deadline_ms')):
+            raise InputError('rule thresholds must be finite')
+        if 'response' in rule and any(not finite(v) for v in rule['response'].values()):
+            raise InputError('rule responses must be finite')
+        if kind == 'response' and rule['trigger_kind'] not in {
+                'measurement', 'command', 'state', 'tick', 'fault', 'request', 'command_result',
+                'connection', 'heartbeat', 'actuator', 'injection', 'numerical'}:
+            raise InputError('unsupported trigger kind')
         if 'response' in rule and 'deadline_ms' not in rule:
             raise InputError('response needs explicit deadline')
         if kind in ('range', 'sample_age'):
@@ -127,7 +136,7 @@ def generic(ledger, rows, config):
             observed = []
             for row in applicable:
                 m = row['measurements'].get(channel)
-                if m is None or kind == 'sample_age' and m['sample_time_ms'] is None:
+                if m is None or (kind == 'sample_age' and m['sample_time_ms'] is None):
                     ledger.mark(identity, 'inconclusive', {'time_ms': row['time'], 'reason': 'missing sample evidence'})
                     continue
                 numeric.append(m['value'] if kind == 'range' else row['time'] - m['sample_time_ms'])
@@ -136,7 +145,7 @@ def generic(ledger, rows, config):
             if low > high:
                 raise InputError('inverted range')
             robust = range_robustness(numeric, low, high) if numeric else []
-            for row, margin in zip(observed, robust):
+            for row, margin in zip(observed, robust, strict=True):
                 m = row['measurements'][channel]
                 if margin < 0 or m['quality'] != 'good':
                     if 'response' in rule:
@@ -165,11 +174,11 @@ def fluid(ledger, rows):
     for channel in ('pressure1', 'pressure2'):
         values = [row['measurements'].get(channel, {}).get('value', 0) for row in rows]
         pressure_margins[channel] = range_robustness(values, 0, 200000) if values else []
-    history = set()
+    history: set[str] = set()
     acknowledged = True
     valid_since = None
     mismatch_since = None
-    identities = {}
+    identities: dict[str, str] = {}
     prior_connected = None
     any_tick = False
     for index, row in enumerate(rows):
@@ -208,7 +217,7 @@ def fluid(ledger, rows):
         connected = row['connected']
         if connected is None:
             ledger.mark('I06', 'inconclusive', {'time_ms': now, 'reason': 'connection absent'})
-        disconnect_bad = connected is False and (row['old_state'] == 'running' or bool(history) and not acknowledged)
+        disconnect_bad = connected is False and (row['old_state'] == 'running' or (bool(history) and not acknowledged))
         active = bool(invalid) or heartbeat_bad or mismatch_bad or disconnect_bad
         if active or missing or not connected:
             valid_since = None
@@ -224,9 +233,15 @@ def fluid(ledger, rows):
             ledger.obligation('I12', now, 10, 'fault', lambda d: d['cause'] == 'valve_mismatch')
         applied = [e['data']['command']['type'] for e in row['events']
                    if e['kind'] == 'command_result' and e['data']['outcome'] == 'applied']
-        if state == 'running' and row['old_state'] != 'running':
-            if row['old_state'] != 'armed' or 'start' not in applied or active or not acknowledged:
-                ledger.mark('I01', 'fail', {'time_ms': now, 'reason': 'illegal running entry'})
+        requests = {json.dumps(e['data'], sort_keys=True) for e in row['events'] if e['kind'] == 'request'}
+        for e in row['events']:
+            if e['kind'] == 'command_result' and json.dumps(e['data']['command'], sort_keys=True) not in requests:
+                ledger.mark('I09', 'fail', {'time_ms': now, 'reason': 'outcome has no matching raw request'})
+                if e['data']['command']['type'] == 'start':
+                    ledger.mark('I01', 'fail', {'time_ms': now, 'reason': 'start has no explicit request'})
+        if state == 'running' and row['old_state'] != 'running' and (
+                row['old_state'] != 'armed' or 'start' not in applied or active or not acknowledged):
+            ledger.mark('I01', 'fail', {'time_ms': now, 'reason': 'illegal running entry'})
         if 'stop' in applied and 'start' in applied and state == 'running':
             ledger.mark('I11', 'fail', {'time_ms': now})
         if prior_connected is False and connected is True and state == 'running':

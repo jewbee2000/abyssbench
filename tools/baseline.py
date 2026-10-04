@@ -1,8 +1,8 @@
 """Independently authored public-library spike. No AbyssBench imports."""
 import importlib.metadata as md
 import json
-from pathlib import Path
 import time
+from pathlib import Path
 
 import openhtf as htf
 import rtamt

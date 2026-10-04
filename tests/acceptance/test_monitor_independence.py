@@ -2,9 +2,10 @@ import copy
 import json
 from pathlib import Path
 
-from hypothesis import given, settings, strategies as st
-from hypothesis.database import DirectoryBasedExampleDatabase
 import pytest
+from hypothesis import given, settings
+from hypothesis import strategies as st
+from hypothesis.database import DirectoryBasedExampleDatabase
 
 from abyssbench import Command, FluidController, InputError, Recipe, monitor, run, write_jsonl
 from abyssbench.runner import Plant
@@ -38,9 +39,8 @@ def test_each_monitor_invariant_has_a_negative_control(identity):
         now, kind, d = e['time_ms'], e['kind'], e['data']
         if identity == 'I01' and kind == 'state' and now == 10:
             d['state'] = 'running'
-        if identity in ('I02', 'I03'):
-            if kind == 'measurement' and now >= 500:
-                d['sample_time_ms'] = 100
+        if identity in ('I02', 'I03') and kind == 'measurement' and now >= 500:
+            d['sample_time_ms'] = 100
         if identity == 'I04' and kind == 'command' and now >= 500:
             d['pump'] = 1
         if identity == 'I05' and kind == 'command' and now >= 500:

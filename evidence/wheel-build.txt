@@ -1,0 +1,94 @@
+running egg_info
+writing src\abyssbench.egg-info\PKG-INFO
+writing dependency_links to src\abyssbench.egg-info\dependency_links.txt
+writing entry points to src\abyssbench.egg-info\entry_points.txt
+writing requirements to src\abyssbench.egg-info\requires.txt
+writing top-level names to src\abyssbench.egg-info\top_level.txt
+reading manifest file 'src\abyssbench.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\abyssbench.egg-info\SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+copying src\abyssbench\cli.py -> build\lib\abyssbench
+copying src\abyssbench\contracts.py -> build\lib\abyssbench
+copying src\abyssbench\controller.py -> build\lib\abyssbench
+copying src\abyssbench\integrations.py -> build\lib\abyssbench
+copying src\abyssbench\monitor.py -> build\lib\abyssbench
+copying src\abyssbench\recording.py -> build\lib\abyssbench
+copying src\abyssbench\report.py -> build\lib\abyssbench
+copying src\abyssbench\runner.py -> build\lib\abyssbench
+copying src\abyssbench\trace.py -> build\lib\abyssbench
+copying src\abyssbench\_check_worker.py -> build\lib\abyssbench
+copying src\abyssbench\__init__.py -> build\lib\abyssbench
+copying src\abyssbench\__main__.py -> build\lib\abyssbench
+running egg_info
+writing src\abyssbench.egg-info\PKG-INFO
+writing dependency_links to src\abyssbench.egg-info\dependency_links.txt
+writing entry points to src\abyssbench.egg-info\entry_points.txt
+writing requirements to src\abyssbench.egg-info\requires.txt
+writing top-level names to src\abyssbench.egg-info\top_level.txt
+reading manifest file 'src\abyssbench.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\abyssbench.egg-info\SOURCES.txt'
+copying src\abyssbench\oracle-provenance.json -> build\lib\abyssbench
+copying src\abyssbench\py.typed -> build\lib\abyssbench
+copying src\abyssbench\schemas\event-v1.json -> build\lib\abyssbench\schemas
+copying src\abyssbench\schemas\result-v1.json -> build\lib\abyssbench\schemas
+copying src\abyssbench\schemas\rules-v1.json -> build\lib\abyssbench\schemas
+copying src\abyssbench\schemas\event-v1.json -> build\lib\abyssbench\schemas
+copying src\abyssbench\schemas\result-v1.json -> build\lib\abyssbench\schemas
+copying src\abyssbench\schemas\rules-v1.json -> build\lib\abyssbench\schemas
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\abyssbench
+copying build\lib\abyssbench\cli.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\contracts.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\controller.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\integrations.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\monitor.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\oracle-provenance.json -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\py.typed -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\recording.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\report.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\runner.py -> build\bdist.win-amd64\wheel\.\abyssbench
+creating build\bdist.win-amd64\wheel\abyssbench\schemas
+copying build\lib\abyssbench\schemas\event-v1.json -> build\bdist.win-amd64\wheel\.\abyssbench\schemas
+copying build\lib\abyssbench\schemas\result-v1.json -> build\bdist.win-amd64\wheel\.\abyssbench\schemas
+copying build\lib\abyssbench\schemas\rules-v1.json -> build\bdist.win-amd64\wheel\.\abyssbench\schemas
+copying build\lib\abyssbench\trace.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\_check_worker.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\__init__.py -> build\bdist.win-amd64\wheel\.\abyssbench
+copying build\lib\abyssbench\__main__.py -> build\bdist.win-amd64\wheel\.\abyssbench
+running install_egg_info
+Copying src\abyssbench.egg-info to build\bdist.win-amd64\wheel\.\abyssbench-0.1.0-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\abyssbench-0.1.0.dist-info\WHEEL
+creating 'C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\artifacts\dist\.tmp-0cvlvsb1\abyssbench-0.1.0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
+adding 'abyssbench/__init__.py'
+adding 'abyssbench/__main__.py'
+adding 'abyssbench/_check_worker.py'
+adding 'abyssbench/cli.py'
+adding 'abyssbench/contracts.py'
+adding 'abyssbench/controller.py'
+adding 'abyssbench/integrations.py'
+adding 'abyssbench/monitor.py'
+adding 'abyssbench/oracle-provenance.json'
+adding 'abyssbench/py.typed'
+adding 'abyssbench/recording.py'
+adding 'abyssbench/report.py'
+adding 'abyssbench/runner.py'
+adding 'abyssbench/trace.py'
+adding 'abyssbench/schemas/event-v1.json'
+adding 'abyssbench/schemas/result-v1.json'
+adding 'abyssbench/schemas/rules-v1.json'
+adding 'abyssbench-0.1.0.dist-info/licenses/LICENSE'
+adding 'abyssbench-0.1.0.dist-info/METADATA'
+adding 'abyssbench-0.1.0.dist-info/WHEEL'
+adding 'abyssbench-0.1.0.dist-info/entry_points.txt'
+adding 'abyssbench-0.1.0.dist-info/top_level.txt'
+adding 'abyssbench-0.1.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built abyssbench-0.1.0-py3-none-any.whl

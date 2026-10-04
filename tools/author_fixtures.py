@@ -16,8 +16,8 @@ mapping = {'schema_version': 1, 'clock': 'simulation', 'units': {'temperature': 
 (destination / 'csv-map.json').write_text(json.dumps(mapping, indent=2))
 for name in ('valid', 'violating', 'incomplete'):
     events = []
-    def emit(at, kind, data):
-        events.append({'schema_version': 1, 'clock': 'simulation', 'sequence': len(events),
+    def emit(at, kind, data, target=events):
+        target.append({'schema_version': 1, 'clock': 'simulation', 'sequence': len(target),
                        'time_ms': at, 'kind': kind, 'data': data})
     emit(0, 'measurement', {'channel': 'temperature', 'value': 25, 'unit': 'degC',
                           'sample_time_ms': 0, 'receive_time_ms': 0, 'quality': 'good',
