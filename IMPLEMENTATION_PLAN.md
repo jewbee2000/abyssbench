@@ -1,86 +1,82 @@
 # AbyssBench implementation plan
 
+Revised 2026-10-04. Begin with [requirements and rationale](docs/REQUIREMENTS.md). The previous all-features-at-once plan is superseded by this useful-core-first sequence. Application implementation has not started.
+
 ## Purpose and feasibility
 
-A simulated fluid test stand that makes timing and recovery failures reproducible.
+A reusable controller fault-replay and timing-contract test tool, demonstrated with a simulated fluid test stand. Many controller bugs concern ordering and elapsed time rather than steady-state values. A reproducible trace with an independent monitor can turn an intermittent failure into a regression test. It fits Walter's automation, motion-control, and fault-handling experience.
 
-Walter has commissioned test automation, worked with motion-control fault handling, and built mechatronic systems. A simulated fluid stand extends those interests into an inspectable systems project. The public story is about testing machines, not about a particular employer or energy company.
+The proposed contribution is a small integration layer for engineering signal provenance, replay, fault schedules, and requirement-linked failure timelines that works on logs and external controllers. Generic temporal verification is not new. Confidence: medium; reusable interfaces and a second example are necessary to avoid producing only a pump simulator.
 
-High for a software-in-the-loop test stand; medium for the optional C++ controller and low without owner involvement for real hardware commissioning. Start with a Python reference controller and virtual clock. Add C++ only after the simulator and invariant suite work.
+75–115 engineering hours as a planning range, to revise after M0. Python and static reports are the first release; external traces and a second example take priority over C++ or live AI experiments.
 
-75–110 engineering hours for the original cross-language scope. A Python-only first release reduces environment risk but is still a substantial systems project. Optional owner review: 45–90 minutes across behavior and final demo; no hardware or domain calibration is required for synthetic tests.
+Core software can be built with minimal owner guidance, but novelty and adoption are not established. Use existing libraries and routine design judgment. Do not require physical measurements to finish a software release; do not claim those measurements occurred.
 
-## The result a visitor should see
+## Build sequence
 
-Run the same recipe against a healthy stand, a frozen pressure reading, and a stuck valve. Compare deterministic timelines. A deliberately faulty controller treats a delayed packet as fresh, is caught by the independent monitor, and is repaired without disabling the alarm.
+### M0 Compare baselines and freeze temporal semantics
 
-## Technical approach
+Work: Evaluate the existing-tool baseline; define trace schema, rule semantics, threshold equality, observation windows, and clock policy. Check fluid equation units and reference traces.
 
-Python 3.12, Pydantic, NumPy, pytest, Hypothesis, Typer, FastAPI, simple browser charts, Parquet via PyArrow. Use an in-process virtual clock. Optional C++20 controller over newline-delimited JSON with CMake after a compiler spike. No PLC, cloud service, real networked plant, or physical pump is required.
+Exit evidence: A small reproducible scenario establishes what the package adds; all twelve reference invariants have independent expectations.
 
-The public repository must be useful without live AI. The strongest evidence is a requirement that becomes an independent check, a candidate that fails it, and a justified repair. Do not turn the project into a generic chat interface. Retain the original research's specification, verification, and bounded repair approach while narrowing the first release to something one coding agent can complete.
+Primary requirements: AB-02 AB-03 AB-13. All earlier contracts remain regression requirements.
 
-## M0 Freeze the simulator assumptions
+### M1 Replay a trace and one healthy stand run
 
-Work: Validate equation units, reference defaults, state/event matrix, timing boundaries, schemas, and requirements. Lock a minimal Python environment.
+Work: Build a virtual clock, JSONL/CSV import, plant example, and raw event recorder before UI work.
 
-Exit evidence: Hand calculations and a zero-input equilibrium check agree; example traces define boundary behavior.
+Exit evidence: A user-supplied trace is checked without the plant; a healthy reference run is deterministic.
 
-Requirements: AB-01 AB-02 AB-03. Planning estimate: 10–15 h.
+Primary requirements: AB-01 AB-07 AB-14. All earlier contracts remain regression requirements.
 
+### M2 Test external controllers and fault behavior
 
-## M1 Build one healthy test run
+Work: Add public Python/pytest adapters, fault scheduling, independent monitor, six defects, and stateful sequences.
 
-Work: Implement virtual clock, plant, Python controller, one recipe, and raw event export before any UI.
+Exit evidence: All deliberate defects are caught; incomplete evidence is inconclusive and faults produce measured command latency.
 
-Exit evidence: Healthy run reproduces exactly and responds to an explicit stop.
+Primary requirements: AB-04 AB-05 AB-06 AB-08 AB-09 AB-11 AB-15 AB-16 AB-19. All earlier contracts remain regression requirements.
 
-Requirements: AB-01 AB-02 AB-03 AB-07. Planning estimate: 18–25 h.
+### M3 Prove reuse and make timelines readable
 
+Work: Build the independent thermal example and HTML timelines. Add OpenHTF/Parquet only after core behavior passes.
 
-## M2 Build the independent monitor and fault suite
+Exit evidence: The second example uses the same engine; reports identify cause, observation window, detection, commands, and limitations.
 
-Work: Author invariants, five injectors, six deliberate defects, randomized sequences, and recovery boundary cases.
+Primary requirements: AB-10 AB-17 AB-18. All earlier contracts remain regression requirements.
 
-Exit evidence: Every critical mutation is caught and fault command latency is measured.
+### M4 Verify adoption and prepare the local release
 
-Requirements: AB-04 AB-05 AB-06 AB-08 AB-09 AB-11. Planning estimate: 18–25 h.
+Work: Run fresh-install checks, deterministic replay, interrupted-log recovery, resource tests, lint/types/tests, and the consumer walkthrough. Update the blog from actual results.
 
+Exit evidence: Every applicable Must requirement has evidence; simulation and physical behavior remain explicitly separate.
 
-## M3 Add report and bounded repair experiment
+Primary requirements: AB-12 AB-20 AB-21 AB-22. All earlier contracts remain regression requirements.
 
-Work: Create comparison charts and evidence browser. Build replay-based repair tasks; optionally add C++ after compiler availability is confirmed.
+## Method and dependencies
 
-Exit evidence: Same schedule compares bad and repaired controller; a patch that disables checks is rejected.
+Use Python with a repository-local pinned environment; select compatible versions during M0. Read SPEC.md for existing reference-case constants. Requirements proceed M0 → M1 → M2 → M3 → M4; the machine-readable register identifies primary milestones and baseline dependencies. Tests and documentation evolve with each slice rather than accumulating at the end.
 
-Requirements: AB-09 AB-10 AB-12. Planning estimate: 15–25 h.
-
-
-## M4 Prepare a reproducible portfolio release
-
-Work: Finish provenance, interruption tests, one-command demo, fresh-install checks, README, and blog.
-
-Exit evidence: Every requirement has evidence; public claims explicitly cover only simulated behavior.
-
-Requirements: AB-01 AB-10 AB-12. Planning estimate: 14–20 h.
-
+For every nontrivial feature: state the requirement, write an independent failing check, implement the smallest slice, inspect actual output, record evidence, and commit locally. Preserve known failures and explain repairs. A product model, elaborate UI, web service, or paid API is not needed for the useful first release. Reuse primary-source libraries after verifying current installation and capabilities.
 
 ## Model evaluation after the deterministic release
+
 
 Use six seeded defects × three fresh trials for one-shot repair and six × three for bounded repair: 36 live trials in total, with a deterministic scripted-patch baseline reported separately. Require the independent monitor to catch all six defects. A target such as repairing four of six defect classes is an experiment goal, not a release requirement or observed result. Record any repair that changes the oracle as invalid. The core project remains useful if no live model campaign is run.
 
 The evaluator's inputs are frozen before the campaign. One-shot and repair runs use the same budgets except for the explicitly reported repair allowance. Capture all attempts; do not discard unsuccessful trials. Separate a replay demonstration from a live model evaluation. These comparisons are project-local experiments, not claims about every AI model or engineering task.
 
-## Risks and fallback decisions
+## Risks and decision rules
 
-Simulation can create impressive-looking graphs without engineering substance. The antidote is explicit equations, dimensional checks, clock-boundary cases, a separate monitor, and claims limited to specified behavior. A passing simulation does not qualify real hardware. If the C++ toolchain or UI consumes disproportionate effort, ship the tested Python controller and static report first; record that scope decision.
+The largest product risk is duplicating existing software or building a demonstration that accepts only its own fixtures. The M0 comparison and M4 independent consumer walkthrough are release gates. Prefer a narrow library/plugin when it satisfies the same needs. Do not silently drop external integration in order to finish a more impressive-looking demo.
 
-## Owner involvement
+If a technical dependency or required semantic cannot be implemented, record it as blocked or unsupported and do not label the release complete. If the entire useful contribution disappears after the baseline comparison, stop broad implementation and report the concrete result; do not invent novelty or ask for routine design approvals.
 
-No response from Walter is needed for routine naming, data models, fixtures, UI choices, or test implementation within this specification. The agent can define missing synthetic examples and document assumptions. Ask only when a decision would materially change the project's claim or exceed the authorized environment. An optional final review of the first-person article would improve the voice; no invented memory or measured result should be used to avoid that review.
+## Owner involvement and publication
 
-Before any live API campaign, a model adapter, credential, and spending ceiling are needed. None is required for the deterministic product or replay. Physical validation requires Walter to perform or arrange the measurement. Remote publication requires a later instruction because the present instruction forbids pushes.
+No owner guidance is needed for routine architecture, naming, examples, or tests within these requirements. Physical tests, paid live model campaigns, and remote publication require separate resources or authorization. Do not contact maintainers or prospective users automatically. No pushes, deployment, or remote commits. Local commits are authorized.
 
 ## Definition of finished
 
-All required behaviors in docs/SPEC.md have independent evidence. The README gives a working fresh-clone setup and offline demo. Artifacts are real, versioned, and labeled by scope. The code, tests, environment lockfile, architecture, evidence, and article are locally committed. A future publication step creates or selects the GitHub repository, pushes the reviewed commits, verifies public links, then publishes the matching website article. Until that later step, remote GitHub and live-site completion remain pending.
+All applicable Must requirements have independent executed evidence. Should/Could omissions and Won't scope are explicit. A clean consumer walkthrough works on a non-default input, and reports show a real detected failure and repair. The first-person article is updated only from observed work, remains unpublished, and has no invented anecdotes, physical measurements, or live-model scores. Hosted repositories and website publication remain pending a later instruction.

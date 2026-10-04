@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project": "abyssbench",
   "status": "planned",
   "requirements": [
@@ -8,84 +8,352 @@
       "requirement": "The plant and clock reproduce the same event sequence for a fixed configuration, seed, and fault schedule.",
       "acceptance": "Compare canonical JSON event hashes across two runs; exclude wall-clock metadata.",
       "planned_test": "tests/acceptance/test_deterministic_time.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "An intermittent failure is actionable only if the inputs and event order can be reproduced.",
+      "milestone": "M1",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-02",
       "requirement": "Sensors carry unit, sample time, receive time, quality, and provenance separately.",
       "acceptance": "Delay and replay packets; verify sample age is unchanged and unit mismatch is rejected.",
       "planned_test": "tests/acceptance/test_measurement_contract.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Unit errors and confused sampling/receipt timestamps can invalidate otherwise correct control decisions.",
+      "milestone": "M0",
+      "applies_when": "Core v1 release",
+      "dependencies": []
     },
     {
       "id": "AB-03",
       "requirement": "Arming, starting, stopping, and recovery follow the specified state graph.",
       "acceptance": "Table-test every state/event pair, including illegal starts and simultaneous stop/start.",
       "planned_test": "tests/acceptance/test_state_transitions.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "An explicit transition table makes illegal starts and recovery paths reviewable.",
+      "milestone": "M0",
+      "applies_when": "Core v1 release",
+      "dependencies": []
     },
     {
       "id": "AB-04",
       "requirement": "Stale age >200 ms and future timestamps are detected using sample time.",
       "acceptance": "Test 199, 200, 201 ms ages and future timestamps; receiving an old packet cannot reset freshness.",
       "planned_test": "tests/acceptance/test_freshness.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "A delayed packet must not make stale sensor data appear fresh.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-05",
       "requirement": "A detected fault commands pump off and valve open within 10 ms.",
       "acceptance": "Independent event monitor measures detection-to-command latency under all fault schedules.",
       "planned_test": "tests/acceptance/test_safe_command_latency.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "A fault response needs a measurable deadline; issuing a command is distinct from reaching a physical state.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-06",
       "requirement": "Reconnect cannot restart the stand and fault history remains latched.",
       "acceptance": "Disconnect during a run, reconnect, acknowledge, rearm; missing any recovery step blocks start.",
       "planned_test": "tests/acceptance/test_recovery_latch.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Reconnect is transport recovery, not authorization to resume a potentially hazardous process.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-07",
       "requirement": "Expired and conflicting duplicate commands are rejected; exact duplicates are not reapplied.",
       "acceptance": "Vary expiry around 100 ms and repeat IDs with identical and changed payloads.",
       "planned_test": "tests/acceptance/test_command_identity.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Delayed or repeated messages must not produce duplicate or outdated actions.",
+      "milestone": "M1",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-08",
       "requirement": "All five fault types are injected deterministically and detected under their specified conditions.",
       "acceptance": "Scenario manifest includes onset, values, expected earliest detection, and exact required response.",
       "planned_test": "tests/acceptance/test_fault_coverage.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Each failure mode needs an independently specified onset and response.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-09",
       "requirement": "The monitor catches six seeded controller defects without using controller implementation logic.",
       "acceptance": "Freshness from receive time, inverted valve command, pressure unit mismatch, unsafe reconnect, unbounded retry, and lost latch each fail.",
       "planned_test": "tests/acceptance/test_mutation_detection.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Deliberate controller defects test the monitor rather than merely the happy-path controller.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-10",
       "requirement": "Run artifacts preserve hashes and identify interrupted runs as incomplete.",
       "acceptance": "Interrupt recording, corrupt an artifact, and reproduce a completed run from its manifest.",
       "planned_test": "tests/acceptance/test_recording_integrity.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "A partial or corrupted trace cannot justify a successful run.",
+      "milestone": "M3",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-11",
       "requirement": "Recipe validation and randomized event sequences preserve the invariant set.",
       "acceptance": "Reject nonfinite values and unknown units; run 1000 bounded Hypothesis sequences and store counterexamples.",
       "planned_test": "tests/acceptance/test_stateful_invariants.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "Sequences expose ordering bugs that isolated state tests miss.",
+      "milestone": "M2",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     },
     {
       "id": "AB-12",
       "requirement": "Offline demo and report work without hardware or credentials and disclose the simulation boundary.",
       "acceptance": "Fresh-install run verifies charts, fault times, and labels; all twelve invariants have assertions.",
       "planned_test": "tests/acceptance/test_reproducibility.py",
-      "status": "not_implemented"
+      "status": "not_implemented",
+      "priority": "must",
+      "rationale": "An engineer should be able to inspect the timeline without building a physical stand.",
+      "milestone": "M4",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-13",
+      "priority": "must",
+      "milestone": "M0",
+      "requirement": "Compare pytest plus RTAMT and OpenHTF against the required replay and timing workflow before introducing a new framework.",
+      "rationale": "The useful contribution must be integration or clearer engineering evidence, not reimplementing test execution or temporal logic.",
+      "acceptance": "Use one stale-input and one reconnect scenario; document installed versions, configuration, timestamp semantics, reporting gaps, and reuse choices in docs/BASELINE.md. Prefer a small adapter/recipe library if existing tools satisfy the requirements.",
+      "planned_test": "tests/acceptance/test_baseline_artifacts.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": []
+    },
+    {
+      "id": "AB-14",
+      "priority": "must",
+      "milestone": "M1",
+      "requirement": "Import versioned JSONL traces and CSV through an explicit column/unit map without running the bundled plant.",
+      "rationale": "Real engineers already have logs; requiring the pump simulator would make the tool a demonstration only.",
+      "acceptance": "A separately authored trace produces the same verdict through both formats. Preserve raw sample and receive times; reject ambiguous units, missing required channels, and unsupported clock relationships.",
+      "planned_test": "tests/acceptance/test_external_trace.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-15",
+      "priority": "must",
+      "milestone": "M2",
+      "requirement": "A public Python controller adapter accepts measurements and a virtual tick and returns commands; pytest can invoke the runner without a web server.",
+      "rationale": "An engineer needs to test their controller, not only the bundled implementation.",
+      "acceptance": "A controller in a separate consumer directory runs without editing abyssbench source. Its command stream is judged by the independent monitor; no controller helper is imported into expected-value calculations.",
+      "planned_test": "tests/acceptance/test_external_controller.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-16",
+      "priority": "must",
+      "milestone": "M2",
+      "requirement": "Temporal verdicts are pass, fail, or inconclusive and state their observation window and clock assumptions.",
+      "rationale": "Incomplete traces and incompatible clocks are common sources of false assurance.",
+      "acceptance": "A trace ending before a response deadline is inconclusive, never pass. Missing sample time cannot prove freshness. Reject unordered sequence IDs and unsupported cross-clock timestamps; check exact threshold boundaries. Streaming future-window rules remain pending until their deadlines.",
+      "planned_test": "tests/acceptance/test_monitor_semantics.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-17",
+      "priority": "must",
+      "milestone": "M3",
+      "requirement": "Reuse the same monitor and trace interface in a second, simple thermal-controller example with stale-temperature and heater-off requirements.",
+      "rationale": "A second domain is a concrete test that the public abstraction is reusable rather than hard-coded to a pump.",
+      "acceptance": "Freeze a separate example specification with valid, violating, and incomplete traces. Configure channels and rules without changing the monitor engine or importing fluid-model code.",
+      "planned_test": "tests/acceptance/test_second_example.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-18",
+      "priority": "should",
+      "milestone": "M3",
+      "requirement": "Provide an OpenHTF integration example and optional Parquet export after the JSONL/pytest workflow works.",
+      "rationale": "This helps adoption in an existing station workflow but is not needed to prove the core tool.",
+      "acceptance": "The integration attaches requirement verdicts and artifacts to a test record; Parquet and JSONL retain identical timestamps and units.",
+      "planned_test": "tests/acceptance/test_openhtf_export.py",
+      "status": "not_implemented",
+      "applies_when": "If selected after Must requirements pass",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-19",
+      "priority": "must",
+      "milestone": "M2",
+      "requirement": "Publish a versioned input and result schema, stable requirement IDs, public Python API, and a scriptable CLI with clear failure semantics.",
+      "rationale": "CI must not confuse an unsupported check or crashed evaluator with a valid result.",
+      "acceptance": "For normal check commands: exit 0 only when every applicable required check passes; exit 1 for violations; exit 2 for invalid, incomplete, unsupported, or failed execution. Results preserve individual pass/fail/inconclusive/not_applicable states. The demo command separately verifies its expected negative cases. Unknown schema versions are rejected.",
+      "planned_test": "tests/acceptance/test_public_contract.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-20",
+      "priority": "must",
+      "milestone": "M4",
+      "requirement": "Declare resource limits and measure repeatable performance for the supported workload in the pinned environment.",
+      "rationale": "A tool that hangs or silently drops large input cannot be trusted in an engineering workflow.",
+      "acceptance": "During M0 freeze input-size/case limits and a target runtime with machine details. M4 records actual elapsed time and peak memory; an oversized input or elapsed-time limit produces a bounded error and incomplete result. CAD work runs in a killable worker. Compare against the baseline; do not claim universal performance.",
+      "planned_test": "tests/acceptance/test_resource_limits.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-21",
+      "priority": "must",
+      "milestone": "M4",
+      "requirement": "Keep offline workflows local by default and document dependency, fixture, manual, and example licensing.",
+      "rationale": "Engineers must be able to inspect data handling and legally reuse the code and examples.",
+      "acceptance": "No credentials or telemetry are needed; the offline demo completes with egress disabled after installation. Source examples have provenance and redistributable licenses, or use a download recipe and lawful independently authored fixtures. Escape user text in HTML; reject output path traversal and avoid executing input data.",
+      "planned_test": "tests/acceptance/test_data_and_license_boundaries.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
+    },
+    {
+      "id": "AB-22",
+      "priority": "must",
+      "milestone": "M4",
+      "requirement": "Demonstrate adoption from a separate clean consumer directory using only the documented public interface.",
+      "rationale": "A successful bundled demo alone is not evidence that another engineer can use the tool.",
+      "acceptance": "Record a complete cold-start walkthrough: install, configure one non-default input, get an expected failure, correct it, and reproduce success without editing package source. Include actual commands, setup time, code/config size, and limitations versus the baseline. Label agent-executed walkthroughs as such; practitioner validation remains unverified until real feedback exists.",
+      "planned_test": "tests/acceptance/test_consumer_walkthrough.py",
+      "status": "not_implemented",
+      "applies_when": "Core v1 release",
+      "dependencies": [
+        "AB-13"
+      ]
     }
-  ]
+  ],
+  "requirements_revision": "2026-10-04",
+  "decision_status": "refined_plan_not_implemented",
+  "exclusions": [
+    {
+      "id": "AB-W01",
+      "priority": "wont",
+      "requirement": "A replacement for OpenHTF, labgrid, RTAMT, or a production SCADA system",
+      "rationale": "Existing projects solve those broader problems; scope is replay and engineering contracts.",
+      "acceptance": "Absent from the v1 supported-features list; README and reports do not claim this capability.",
+      "status": "excluded_v1"
+    },
+    {
+      "id": "AB-W02",
+      "priority": "wont",
+      "requirement": "A calibrated hydraulic model, digital twin, or prediction of real process performance",
+      "rationale": "The reference equations are deliberately illustrative and unvalidated.",
+      "acceptance": "Absent from the v1 supported-features list; README and reports do not claim this capability.",
+      "status": "excluded_v1"
+    },
+    {
+      "id": "AB-W03",
+      "priority": "wont",
+      "requirement": "Functional safety certification, hard real-time guarantees, or automatic control of a live stand",
+      "rationale": "Software simulation evidence does not qualify a deployed control system.",
+      "acceptance": "Absent from the v1 supported-features list; README and reports do not claim this capability.",
+      "status": "excluded_v1"
+    },
+    {
+      "id": "AB-W04",
+      "priority": "wont",
+      "requirement": "A custom temporal-logic language or theorem prover",
+      "rationale": "Start with a small explicit rule schema; evaluate existing monitoring libraries.",
+      "acceptance": "Absent from the v1 supported-features list; README and reports do not claim this capability.",
+      "status": "excluded_v1"
+    },
+    {
+      "id": "AB-W05",
+      "priority": "wont",
+      "requirement": "Distributed multi-clock reconstruction, arbitrary PLC adapters, and C++ in the first release",
+      "rationale": "These introduce separate synchronization/toolchain problems; the first external controller interface is Python.",
+      "acceptance": "Absent from the v1 supported-features list; README and reports do not claim this capability.",
+      "status": "excluded_v1"
+    }
+  ],
+  "priority_policy": {
+    "must": "Release blocking when applicable",
+    "should": "Valuable after Must; omission needs an explicit rationale",
+    "could": "Optional experiment; never blocks v1",
+    "wont": "Explicitly excluded from v1"
+  }
 }

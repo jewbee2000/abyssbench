@@ -1,11 +1,14 @@
 # Implementation tasks
 
-All tasks below are unstarted. The preparation commit contains specifications and editorial drafts, not application code.
+All tasks are unstarted. Check off only after recording executed evidence.
 
-- [ ] M0 — Freeze the simulator assumptions. Evidence: Hand calculations and a zero-input equilibrium check agree; example traces define boundary behavior.
-- [ ] M1 — Build one healthy test run. Evidence: Healthy run reproduces exactly and responds to an explicit stop.
-- [ ] M2 — Build the independent monitor and fault suite. Evidence: Every critical mutation is caught and fault command latency is measured.
-- [ ] M3 — Add report and bounded repair experiment. Evidence: Same schedule compares bad and repaired controller; a patch that disables checks is rejected.
-- [ ] M4 — Prepare a reproducible portfolio release. Evidence: Every requirement has evidence; public claims explicitly cover only simulated behavior.
+- [ ] M0 — Compare baselines and freeze temporal semantics. Gate: A small reproducible scenario establishes what the package adds; all twelve reference invariants have independent expectations.
+- [ ] M1 — Replay a trace and one healthy stand run. Gate: A user-supplied trace is checked without the plant; a healthy reference run is deterministic.
+- [ ] M2 — Test external controllers and fault behavior. Gate: All deliberate defects are caught; incomplete evidence is inconclusive and faults produce measured command latency.
+- [ ] M3 — Prove reuse and make timelines readable. Gate: The second example uses the same engine; reports identify cause, observation window, detection, commands, and limitations.
+- [ ] M4 — Verify adoption and prepare the local release. Gate: Every applicable Must requirement has evidence; simulation and physical behavior remain explicitly separate.
 
-Update this file only after checking the milestone evidence. See IMPLEMENTATION_PLAN.md for dependencies and estimates.
+- [ ] Record dispositions for every Should/Could item and verify Won't claims remain excluded.
+- [ ] Complete the independent consumer walkthrough and compare its cost with the baseline.
+
+See IMPLEMENTATION_PLAN.md and docs/REQUIREMENTS.md.

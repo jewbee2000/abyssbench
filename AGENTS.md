@@ -1,7 +1,7 @@
 # Working agreement
 
-- Read START_HERE.md, docs/SPEC.md, docs/ACCEPTANCE.md, and TASKS.md before implementation.
-- This is a personal, synthetic engineering project. Use no employer IP or fabricated measurements.
+- Read START_HERE.md, docs/REQUIREMENTS.md, docs/SPEC.md, docs/ACCEPTANCE.md, and TASKS.md before implementation.
+- This is a personal engineering project with labeled synthetic fixtures and licensed public integration examples. Use no employer IP or fabricated measurements.
 - Work autonomously on routine decisions; record assumptions and material tradeoffs.
 - Implement the smallest end-to-end slice, then extend it. Deterministic software comes before model integration.
 - Keep evaluator expected values independent of production code. Never weaken tests to make a candidate pass.

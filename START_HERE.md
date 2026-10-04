@@ -4,7 +4,7 @@ AbyssBench is currently a planning repository. The implementation agent should b
 
 ## Read in order
 
-1. [Implementation plan](IMPLEMENTATION_PLAN.md) — scope, milestones, feasibility, and release gate.
+1. [Prioritized requirements and rationale](docs/REQUIREMENTS.md), then [Implementation plan](IMPLEMENTATION_PLAN.md) — scope, milestones, feasibility, and release gate.
 2. [Specification](docs/SPEC.md) and [acceptance plan](docs/ACCEPTANCE.md) — concrete behavior and independent evidence.
 3. [Agent workflow](docs/AGENT_WORKFLOW.md) — development, evaluation, isolation, and provenance.
 4. [Tasks](TASKS.md) — current progress.
@@ -12,7 +12,7 @@ AbyssBench is currently a planning repository. The implementation agent should b
 
 ## Suggested first agent message
 
-Implement AbyssBench in this repository using START_HERE.md, docs/SPEC.md, docs/ACCEPTANCE.md, and IMPLEMENTATION_PLAN.md. Begin with M0, then continue through the deterministic offline release without waiting for routine design approvals. Make sensible choices inside the stated scope and record them. Establish independent acceptance checks before product code, keep the oracle separate, and retain failed cases. Commit coherent milestones locally and update TASKS.md and evidence/progress.md. Verify outputs from a fresh environment. Do not push, deploy, publish, buy hardware, or spend on model APIs. Do not invent benchmark or physical results. The optional live-model experiment can remain explicitly unrun if no budget or credential is available. Finish by updating the first-person draft with actual evidence and reporting what remains for publication.
+Implement AbyssBench in this repository using START_HERE.md, docs/REQUIREMENTS.md, docs/SPEC.md, docs/ACCEPTANCE.md, and IMPLEMENTATION_PLAN.md. Begin with the M0 existing-tool comparison and usefulness gate. Prefer a compatible integration if it meets the requirements; do not build a duplicate framework. Then continue through applicable Must requirements and the independent consumer walkthrough for the deterministic offline release without waiting for routine design approvals. Make sensible choices inside the stated scope and record them. Establish independent acceptance checks before product code, keep the oracle separate, and retain failed cases. Commit coherent milestones locally and update TASKS.md and evidence/progress.md. Verify outputs from a fresh environment. Do not push, deploy, publish, buy hardware, or spend on model APIs. Do not invent benchmark or physical results. The optional live-model experiment can remain explicitly unrun if no budget or credential is available. Finish by updating the first-person draft with actual evidence and reporting what remains for publication.
 
 ## Environment setup
 

@@ -4,7 +4,7 @@ The central portfolio claim is that Walter can direct an agent through an engine
 
 ## Development loop
 
-1. Read START_HERE.md, the specification, and the next incomplete task. Record assumptions and map the task to requirement IDs before coding.
+1. Read START_HERE.md, docs/REQUIREMENTS.md, the revised implementation plan, the specification, and the next incomplete task. Record assumptions and map the task to requirement IDs before coding.
 2. Build the acceptance oracle first from the written contract. Include a hand-calculated example. Commit it separately. The oracle must not call the production implementation to obtain its expected answers.
 3. Implement one vertical slice, run its relevant checks, inspect the resulting artifact, and repair failures. Use at most three consecutive attempts at the same approach; after that, diagnose and change the approach rather than repeating a prompt.
 4. Review the diff against the specification in a separate pass with implementation context cleared when practical. Different prompts from the same model are additional checks, not proof of reviewer independence.

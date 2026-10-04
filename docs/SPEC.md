@@ -1,6 +1,6 @@
 # AbyssBench specification
 
-Status: implementation-ready proposal. No implementation or benchmark results are claimed.
+Status: refined proposal; M0 baseline comparison is pending. No implementation or benchmark results are claimed. Read [REQUIREMENTS.md](REQUIREMENTS.md) first for priorities, rationale, external-user interfaces, and release gates.
 
 
 ## Scope and physical model
@@ -44,11 +44,11 @@ Measurement fields: channel, value, unit, sample_time_ms, receive_time_ms, quali
 
 Proposed modules: plant/, clock/, controller/, recipes/, fault_injection/, monitor/, recording/, api/, report/. Separate the monitor from controller logic. The monitor consumes the raw event stream and applies the frozen requirements. Do not import controller helpers into expected-value calculations.
 
-Run manifests contain code commit, dirty-tree flag and diff hash, model parameters, recipe hash, seed, event schema version, controller version, oracle hash, and artifact hashes. Write event records durably using a temp-and-rename manifest at completion; mark interrupted runs incomplete. Do not silently report success after an interrupted writer. Parquet rows keep integer timestamps and SI units; a human report may show kPa and L/min explicitly.
+Run manifests contain code commit, dirty-tree flag and diff hash, model parameters, recipe hash, seed, event schema version, controller version, oracle hash, and artifact hashes. Write event records durably using a temp-and-rename manifest at completion; mark interrupted runs incomplete. Do not silently report success after an interrupted writer. Optional Parquet rows keep integer timestamps and SI units; a human report may show kPa and L/min explicitly.
 
 ## Demonstration contract
 
-Target command: `python -m abyssbench demo --offline --output artifacts/demo`. It runs healthy, stale-sensor, and stuck-valve scenarios, exports events.parquet plus JSON event records, verdicts.json, manifest.json, and report.html. Exit 0 means expected healthy behavior and expected fault detection both occurred; an unexpected invariant breach exits nonzero. `python -m abyssbench serve artifacts/demo` later serves read-only charts and event details on localhost.
+Target command: `python -m abyssbench demo --offline --output artifacts/demo`. It runs healthy, stale-sensor, and stuck-valve scenarios, exports JSONL event records (Parquet is a Should feature), verdicts.json, manifest.json, and report.html. Exit 0 means expected healthy behavior and expected fault detection both occurred; an unexpected invariant breach exits nonzero. `python -m abyssbench serve artifacts/demo` later serves read-only charts and event details on localhost.
 
 The report plots pressure, flow, commands, and controller state against simulation time, with marked detection and safe-command times. Show the distinction between issuing a safe command and an actuator actually responding. Compare controller versions on identical fault schedules.
 
@@ -56,19 +56,35 @@ The report plots pressure, flow, commands, and controller state against simulati
 
 Inject sensor freeze, disconnect, out-of-range reading, valve stuck, and delayed/out-of-order delivery. Test boundary timestamps, simultaneous stop/start, and recovery sequences. Stress one thousand short randomized event sequences, then retain minimal failing examples. Optional C++ reuses the protocol contract and is tested against the same independent monitor. Full industrial PLC support, autonomous tuning, hardware control, and live fault injection on a real machine are out of scope.
 
+## Public interface applicability
+
+The 10 ms response deadline, 200 ms freshness threshold, and recovery rules in SPEC.md belong to the fluid reference case. The public monitor takes explicitly configured bounded rules: signal range, sample age, trigger-to-command deadline, and prohibited state transition. M0 freezes their JSON schema. The second example sets its own thresholds. Receiving an out-of-order sample in a valid ordered event log is allowed and evaluated as data; a structurally unordered event log is rejected. This distinction is required for fault replay.
+
 ## Acceptance requirements
 
-| ID | Required behavior | Independent acceptance evidence |
-| --- | --- | --- |
-| AB-01 | The plant and clock reproduce the same event sequence for a fixed configuration, seed, and fault schedule. | Compare canonical JSON event hashes across two runs; exclude wall-clock metadata. |
-| AB-02 | Sensors carry unit, sample time, receive time, quality, and provenance separately. | Delay and replay packets; verify sample age is unchanged and unit mismatch is rejected. |
-| AB-03 | Arming, starting, stopping, and recovery follow the specified state graph. | Table-test every state/event pair, including illegal starts and simultaneous stop/start. |
-| AB-04 | Stale age >200 ms and future timestamps are detected using sample time. | Test 199, 200, 201 ms ages and future timestamps; receiving an old packet cannot reset freshness. |
-| AB-05 | A detected fault commands pump off and valve open within 10 ms. | Independent event monitor measures detection-to-command latency under all fault schedules. |
-| AB-06 | Reconnect cannot restart the stand and fault history remains latched. | Disconnect during a run, reconnect, acknowledge, rearm; missing any recovery step blocks start. |
-| AB-07 | Expired and conflicting duplicate commands are rejected; exact duplicates are not reapplied. | Vary expiry around 100 ms and repeat IDs with identical and changed payloads. |
-| AB-08 | All five fault types are injected deterministically and detected under their specified conditions. | Scenario manifest includes onset, values, expected earliest detection, and exact required response. |
-| AB-09 | The monitor catches six seeded controller defects without using controller implementation logic. | Freshness from receive time, inverted valve command, pressure unit mismatch, unsafe reconnect, unbounded retry, and lost latch each fail. |
-| AB-10 | Run artifacts preserve hashes and identify interrupted runs as incomplete. | Interrupt recording, corrupt an artifact, and reproduce a completed run from its manifest. |
-| AB-11 | Recipe validation and randomized event sequences preserve the invariant set. | Reject nonfinite values and unknown units; run 1000 bounded Hypothesis sequences and store counterexamples. |
-| AB-12 | Offline demo and report work without hardware or credentials and disclose the simulation boundary. | Fresh-install run verifies charts, fault times, and labels; all twelve invariants have assertions. |
+The authoritative rationale, applicability, and independent acceptance evidence for these requirements are in [REQUIREMENTS.md](REQUIREMENTS.md). Reference-case behavior above does not replace the public-interface requirements.
+
+| ID | Priority | Milestone | Requirement |
+| --- | --- | --- | --- |
+| AB-01 | must | M1 | The plant and clock reproduce the same event sequence for a fixed configuration, seed, and fault schedule. |
+| AB-02 | must | M0 | Sensors carry unit, sample time, receive time, quality, and provenance separately. |
+| AB-03 | must | M0 | Arming, starting, stopping, and recovery follow the specified state graph. |
+| AB-04 | must | M2 | Stale age >200 ms and future timestamps are detected using sample time. |
+| AB-05 | must | M2 | A detected fault commands pump off and valve open within 10 ms. |
+| AB-06 | must | M2 | Reconnect cannot restart the stand and fault history remains latched. |
+| AB-07 | must | M1 | Expired and conflicting duplicate commands are rejected; exact duplicates are not reapplied. |
+| AB-08 | must | M2 | All five fault types are injected deterministically and detected under their specified conditions. |
+| AB-09 | must | M2 | The monitor catches six seeded controller defects without using controller implementation logic. |
+| AB-10 | must | M3 | Run artifacts preserve hashes and identify interrupted runs as incomplete. |
+| AB-11 | must | M2 | Recipe validation and randomized event sequences preserve the invariant set. |
+| AB-12 | must | M4 | Offline demo and report work without hardware or credentials and disclose the simulation boundary. |
+| AB-13 | must | M0 | Compare pytest plus RTAMT and OpenHTF against the required replay and timing workflow before introducing a new framework. |
+| AB-14 | must | M1 | Import versioned JSONL traces and CSV through an explicit column/unit map without running the bundled plant. |
+| AB-15 | must | M2 | A public Python controller adapter accepts measurements and a virtual tick and returns commands; pytest can invoke the runner without a web server. |
+| AB-16 | must | M2 | Temporal verdicts are pass, fail, or inconclusive and state their observation window and clock assumptions. |
+| AB-17 | must | M3 | Reuse the same monitor and trace interface in a second, simple thermal-controller example with stale-temperature and heater-off requirements. |
+| AB-18 | should | M3 | Provide an OpenHTF integration example and optional Parquet export after the JSONL/pytest workflow works. |
+| AB-19 | must | M2 | Publish a versioned input and result schema, stable requirement IDs, public Python API, and a scriptable CLI with clear failure semantics. |
+| AB-20 | must | M4 | Declare resource limits and measure repeatable performance for the supported workload in the pinned environment. |
+| AB-21 | must | M4 | Keep offline workflows local by default and document dependency, fixture, manual, and example licensing. |
+| AB-22 | must | M4 | Demonstrate adoption from a separate clean consumer directory using only the documented public interface. |

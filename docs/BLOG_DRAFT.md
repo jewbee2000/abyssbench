@@ -1,3 +1,5 @@
+<!-- Prospective draft: revised requirements and BLOG_BRIEF.md govern the eventual article. No implementation results or novelty claims are established. -->
+
 # A test stand I can break on purpose
 
 Unpublished prospective draft. Implementation and results are pending.

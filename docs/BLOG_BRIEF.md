@@ -38,3 +38,7 @@ A simulator gives me a way to replay these situations exactly. I can freeze a se
 That also makes this a useful experiment in agent-assisted software development. I can ask an agent to implement or repair the controller, then give it feedback from tests whose expectations it does not get to rewrite. I am particularly interested in the repairs that seem sensible until the next failure appears. Those are usually where the system's assumptions become visible.
 
 I want the eventual demonstration to include a healthy run, a failure, and a repair, with enough evidence that someone else can reproduce all three. If the result is mostly a list of places where my original requirements were vague, I would still consider that useful. Finding an ambiguity while the pump is imaginary seems like a good deal.
+
+## Usefulness audit of 2026-10-04
+
+The current contribution is: A reusable controller fault-replay and timing-contract test tool, demonstrated with a simulated fluid test stand. Explain the existing tools, the narrow gap tested in M0, the non-default consumer example, one real failure, and any reason the result is best delivered as an integration. Do not claim a first-of-its-kind tool. Product AI features are optional. The current draft remains prospective; rewrite it after implementation from actual evidence and [REQUIREMENTS.md](REQUIREMENTS.md).
