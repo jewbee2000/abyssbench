@@ -1,0 +1,8 @@
+{
+  "phase": "planning",
+  "implementation_started": false,
+  "application_tests_run": false,
+  "live_model_evaluation_run": false,
+  "physical_validation_run": false,
+  "published": false
+}

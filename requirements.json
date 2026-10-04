@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "project": "abyssbench",
+  "status": "planned",
+  "requirements": [
+    {
+      "id": "AB-01",
+      "requirement": "The plant and clock reproduce the same event sequence for a fixed configuration, seed, and fault schedule.",
+      "acceptance": "Compare canonical JSON event hashes across two runs; exclude wall-clock metadata.",
+      "planned_test": "tests/acceptance/test_deterministic_time.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-02",
+      "requirement": "Sensors carry unit, sample time, receive time, quality, and provenance separately.",
+      "acceptance": "Delay and replay packets; verify sample age is unchanged and unit mismatch is rejected.",
+      "planned_test": "tests/acceptance/test_measurement_contract.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-03",
+      "requirement": "Arming, starting, stopping, and recovery follow the specified state graph.",
+      "acceptance": "Table-test every state/event pair, including illegal starts and simultaneous stop/start.",
+      "planned_test": "tests/acceptance/test_state_transitions.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-04",
+      "requirement": "Stale age >200 ms and future timestamps are detected using sample time.",
+      "acceptance": "Test 199, 200, 201 ms ages and future timestamps; receiving an old packet cannot reset freshness.",
+      "planned_test": "tests/acceptance/test_freshness.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-05",
+      "requirement": "A detected fault commands pump off and valve open within 10 ms.",
+      "acceptance": "Independent event monitor measures detection-to-command latency under all fault schedules.",
+      "planned_test": "tests/acceptance/test_safe_command_latency.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-06",
+      "requirement": "Reconnect cannot restart the stand and fault history remains latched.",
+      "acceptance": "Disconnect during a run, reconnect, acknowledge, rearm; missing any recovery step blocks start.",
+      "planned_test": "tests/acceptance/test_recovery_latch.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-07",
+      "requirement": "Expired and conflicting duplicate commands are rejected; exact duplicates are not reapplied.",
+      "acceptance": "Vary expiry around 100 ms and repeat IDs with identical and changed payloads.",
+      "planned_test": "tests/acceptance/test_command_identity.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-08",
+      "requirement": "All five fault types are injected deterministically and detected under their specified conditions.",
+      "acceptance": "Scenario manifest includes onset, values, expected earliest detection, and exact required response.",
+      "planned_test": "tests/acceptance/test_fault_coverage.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-09",
+      "requirement": "The monitor catches six seeded controller defects without using controller implementation logic.",
+      "acceptance": "Freshness from receive time, inverted valve command, pressure unit mismatch, unsafe reconnect, unbounded retry, and lost latch each fail.",
+      "planned_test": "tests/acceptance/test_mutation_detection.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-10",
+      "requirement": "Run artifacts preserve hashes and identify interrupted runs as incomplete.",
+      "acceptance": "Interrupt recording, corrupt an artifact, and reproduce a completed run from its manifest.",
+      "planned_test": "tests/acceptance/test_recording_integrity.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-11",
+      "requirement": "Recipe validation and randomized event sequences preserve the invariant set.",
+      "acceptance": "Reject nonfinite values and unknown units; run 1000 bounded Hypothesis sequences and store counterexamples.",
+      "planned_test": "tests/acceptance/test_stateful_invariants.py",
+      "status": "not_implemented"
+    },
+    {
+      "id": "AB-12",
+      "requirement": "Offline demo and report work without hardware or credentials and disclose the simulation boundary.",
+      "acceptance": "Fresh-install run verifies charts, fault times, and labels; all twelve invariants have assertions.",
+      "planned_test": "tests/acceptance/test_reproducibility.py",
+      "status": "not_implemented"
+    }
+  ]
+}
