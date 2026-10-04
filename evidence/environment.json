@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "Dell XPS 15 9510",
+  "cpu": "i9-11900H (8 cores/16 threads)",
+  "ram_bytes": 68425691136,
+  "uv": "not on PATH",
+  "docker_daemon": "unavailable",
+  "lock_sha256": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5"
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abyssbench"
+version = "0.1.0"
+description = "Offline controller replay recipes and requirement-linked evidence for pytest/RTAMT"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+dependencies = ["jsonschema==4.26.0", "rtamt==0.4.10"]
+
+[project.optional-dependencies]
+openhtf = ["openhtf==1.6.1"]
+
+[project.scripts]
+abyssbench = "abyssbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+abyssbench = ["schemas/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["requirements(*ids): executed requirement evidence"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+files = ["src/abyssbench"]
+ignore_missing_imports = true
+check_untyped_defs = true

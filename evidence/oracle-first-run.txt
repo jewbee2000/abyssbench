@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+_____________ ERROR collecting tests/acceptance/test_contract.py ______________
+ImportError while importing test module 'C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\tests\acceptance\test_contract.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\Walt\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\acceptance\test_contract.py:10: in <module>
+    from abyssbench import Command, FluidController, Measurement, Tick, monitor, run
+E   ModuleNotFoundError: No module named 'abyssbench'
+=========================== short test summary info ===========================
+ERROR tests/acceptance/test_contract.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 1.23s

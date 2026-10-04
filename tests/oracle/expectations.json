@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "source": "Hand-authored from SPEC.md before product implementation; synthetic open evaluation",
+  "freshness": {"199": "valid", "200": "valid", "201": "stale", "-1": "future"},
+  "command_age": {"99": "applied", "100": "applied", "101": "expired"},
+  "fault_scenarios": {
+    "freeze": {"onset_ms": 500, "sample_time_ms": 450, "detection_ms": 660},
+    "disconnect": {"onset_ms": 500, "detection_ms": 500},
+    "range": {"onset_ms": 500, "value_Pa": 310000, "detection_ms": 500},
+    "stuck": {"onset_ms": 500, "position": 0, "detection_ms": 1010},
+    "delay": {"onset_ms": 500, "replayed_sample_time_ms": 100, "detection_ms": 500}
+  },
+  "invariants": {
+    "I01": "Only armed plus accepted start may enter running",
+    "I02": "Invalid inputs must stop running within 10 ms",
+    "I03": "Age is tick minus sample time, not receive time; future invalid",
+    "I04": "Fault to pump=0 command <=10 ms",
+    "I05": "Fault to valve=1 command <=10 ms",
+    "I06": "Reconnect never directly enters running",
+    "I07": "History persists; 1000 ms continuously valid, ack, arm, separate start",
+    "I08": "Heartbeat age >300 ms detected by next 10 ms tick",
+    "I09": "Exact duplicate not applied twice; conflicting payload rejected",
+    "I10": "Expiry inclusive; age101 expired",
+    "I11": "Stop takes priority over simultaneous start",
+    "I12": "Valve error >0.2 continuously >500 ms detected next tick"
+  },
+  "state_events": ["connect", "disconnect", "arm", "start", "stop", "ack", "fault"],
+  "state_table": {
+    "disconnected": ["ready", "disconnected", "disconnected", "disconnected", "disconnected", "disconnected", "fault"],
+    "ready": ["ready", "disconnected", "armed", "ready", "ready", "ready", "fault"],
+    "armed": ["armed", "disconnected", "armed", "running", "ready", "armed", "fault"],
+    "running": ["running", "fault", "running", "running", "ready", "running", "fault"],
+    "fault": ["recovery_required", "fault", "fault", "fault", "fault", "ready", "fault"],
+    "recovery_required": ["recovery_required", "disconnected", "recovery_required", "recovery_required", "recovery_required", "ready", "fault"]
+  }
+}
