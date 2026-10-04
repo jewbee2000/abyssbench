@@ -1,0 +1,53 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________________________ test_demo_manifest_and_replay ________________________
+
+tmp_path = WindowsPath('C:/Users/Walt/AppData/Local/Temp/pytest-of-Walt/pytest-43/test_demo_manifest_and_replay0')
+
+    @pytest.mark.requirements('AB-08', 'AB-10', 'AB-12')
+    def test_demo_manifest_and_replay(tmp_path):
+        output = tmp_path / 'demo'
+        assert demo(output) == 0
+        manifest = verify(output)
+        assert manifest['seed'] == 0
+        assert manifest['oracle_hash']
+        injection_parameters = {
+            None: {},
+            'freeze': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 450},
+            'stuck': {'actuator': 'valve', 'position': 0},
+            'disconnect': {'connected': False, 'reconnect_ms': 700},
+            'range': {'channel': 'pressure1', 'value': 310000, 'unit': 'Pa'},
+            'delay': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 100,
+                      'receive_time_ms': 500},
+        }
+        for case in manifest['cases']:
+>           assert case['injection_parameters'] == injection_parameters[case['fault']]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'injection_parameters'
+
+tests\acceptance\test_artifacts.py:69: KeyError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\antlr4\Lexer.py:12
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Lexer.py:12: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\antlr4\Parser.py:6
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Parser.py:6: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay - Ke...
+1 failed, 5 warnings in 1.65s

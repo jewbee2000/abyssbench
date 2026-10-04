@@ -22,6 +22,15 @@ def demo(output):
                 'stuck-valve': ('stuck', 1010), 'disconnect': ('disconnect', 500),
                 'out-of-range': ('range', 500), 'delayed-packet': ('delay', 500),
                 'freshness_receive': ('freeze', None), 'repaired': ('freeze', 660)}
+    injection_parameters = {
+        None: {},
+        'freeze': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 450},
+        'stuck': {'actuator': 'valve', 'position': 0},
+        'disconnect': {'connected': False, 'reconnect_ms': 700},
+        'range': {'channel': 'pressure1', 'value': 310000, 'unit': 'Pa'},
+        'delay': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 100,
+                  'receive_time_ms': 500},
+    }
     all_expected = True
     for name, (fault, detection) in expected.items():
         defect = 'freshness_receive' if name == 'freshness_receive' else None
@@ -38,6 +47,7 @@ def demo(output):
             correct = correct and not detected
         all_expected &= correct
         recorder.manifest['cases'].append({'name': name, 'fault': fault, 'onset_ms': 500 if fault else None,
+            'injection_parameters': injection_parameters[fault],
             'expected_detection_ms': detection, 'observed_detection_ms': detected[0] if detected else None,
             'controller_version': defect or 'fluid-v1', 'events': filename,
             'required_safe_response': {'pump': 0, 'valve': 1}, 'deadline_ms': 10,

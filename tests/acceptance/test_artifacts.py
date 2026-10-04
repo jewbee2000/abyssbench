@@ -49,14 +49,24 @@ def test_abrupt_recorder_process_exit_is_incomplete(tmp_path):
         child.communicate(timeout=5)
 
 
-@pytest.mark.requirements('AB-10', 'AB-12')
+@pytest.mark.requirements('AB-08', 'AB-10', 'AB-12')
 def test_demo_manifest_and_replay(tmp_path):
     output = tmp_path / 'demo'
     assert demo(output) == 0
     manifest = verify(output)
     assert manifest['seed'] == 0
     assert manifest['oracle_hash']
+    injection_parameters = {
+        None: {},
+        'freeze': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 450},
+        'stuck': {'actuator': 'valve', 'position': 0},
+        'disconnect': {'connected': False, 'reconnect_ms': 700},
+        'range': {'channel': 'pressure1', 'value': 310000, 'unit': 'Pa'},
+        'delay': {'channels': ['pressure1', 'pressure2', 'flow'], 'sample_time_ms': 100,
+                  'receive_time_ms': 500},
+    }
     for case in manifest['cases']:
+        assert case['injection_parameters'] == injection_parameters[case['fault']]
         if case['controller_version'] == 'fluid-v1':
             assert read_jsonl(output / case['events']) == run(fault=case['fault'], seed=manifest['seed'])
     report = (output / 'report.html').read_text()
