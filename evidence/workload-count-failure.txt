@@ -1,0 +1,32 @@
+........................................................................ [ 63%]
+.......................F.................                                [100%]
+================================== FAILURES ===================================
+_______________ test_case_event_limits_and_executed_performance _______________
+tests\acceptance\test_release_evidence.py:45: in test_case_event_limits_and_executed_performance
+    assert output['event_count'] == 10000
+E   assert 10098 == 10000
+============================== warnings summary ===============================
+.venv\Lib\site-packages\antlr4\Lexer.py:12
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Lexer.py:12: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\antlr4\Parser.py:6
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Parser.py:6: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/acceptance/test_release_evidence.py::test_case_event_limits_and_executed_performance
+1 failed, 112 passed, 5 warnings in 89.89s (0:01:29)

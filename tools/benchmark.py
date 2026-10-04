@@ -35,15 +35,16 @@ def measure(call):
 
 
 def main():
-    events = run(duration_ms=17800)
+    events = run(duration_ms=16000)
     # Complete tick coverage, plus explicitly labelled metadata padding. Cutting
     # an arbitrary event prefix can leave a final unobserved controller tick.
     padding = [{'schema_version': 1, 'clock': 'simulation', 'sequence': 0,
-                'time_ms': 17800, 'kind': 'numerical', 'data': {'benchmark_padding': True}}
+                'time_ms': 16000, 'kind': 'numerical', 'data': {'benchmark_padding': True}}
                for _ in range(10000-len(events))]
     events[-1:-1] = padding
     for sequence, e in enumerate(events):
         e['sequence'] = sequence
+    assert len(events) == 10000
     values = [e['data']['value'] for e in events if e['kind'] == 'measurement' and e['data']['channel'] == 'pressure1']
     def baseline():
         spec = rtamt.StlDiscreteTimeSpecification()
