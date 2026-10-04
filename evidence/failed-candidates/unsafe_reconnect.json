@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "status": "fail",
+  "window_ms": [
+    0,
+    1500
+  ],
+  "clock_assumptions": "single monotonic simulation clock; integer ms; no extrapolation",
+  "checks": [
+    {
+      "id": "I01",
+      "status": "fail",
+      "details": [
+        {
+          "time_ms": 700,
+          "reason": "illegal running entry"
+        }
+      ]
+    },
+    {
+      "id": "I02",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I03",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I04",
+      "status": "pass",
+      "details": [
+        {
+          "trigger_ms": 500,
+          "deadline_ms": 510,
+          "observed_ms": 500,
+          "latency_ms": 0,
+          "evidence_kind": "command"
+        }
+      ]
+    },
+    {
+      "id": "I05",
+      "status": "pass",
+      "details": [
+        {
+          "trigger_ms": 500,
+          "deadline_ms": 510,
+          "observed_ms": 500,
+          "latency_ms": 0,
+          "evidence_kind": "command"
+        }
+      ]
+    },
+    {
+      "id": "I06",
+      "status": "fail",
+      "details": [
+        {
+          "time_ms": 700,
+          "reason": "reconnect restarted"
+        }
+      ]
+    },
+    {
+      "id": "I07",
+      "status": "fail",
+      "details": [
+        {
+          "time_ms": 700,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 710,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 720,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 730,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 740,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 750,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 760,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 770,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 780,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 790,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 800,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 810,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 820,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 830,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 840,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 850,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 860,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 870,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 880,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 890,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 900,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 910,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 920,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 930,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 940,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 950,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 960,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 970,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 980,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 990,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1000,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1010,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1020,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1030,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1040,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1050,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1060,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1070,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1080,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1090,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1100,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1110,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1120,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1130,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1140,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1150,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1160,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1170,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1180,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1190,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1200,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1210,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1220,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1230,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1240,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1250,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1260,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1270,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1280,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1290,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1300,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1310,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1320,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1330,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1340,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1350,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1360,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1370,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1380,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1390,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1400,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1410,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1420,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1430,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1440,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1450,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1460,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1470,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1480,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1490,
+          "reason": "recovery evidence missing"
+        },
+        {
+          "time_ms": 1500,
+          "reason": "recovery evidence missing"
+        }
+      ]
+    },
+    {
+      "id": "I08",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I09",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I10",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I11",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I12",
+      "status": "pass",
+      "details": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "clock": "simulation",
+  "units": {
+    "temperature": "degC"
+  },
+  "columns": {
+    "sequence": "row",
+    "time_ms": "ms",
+    "kind": "event",
+    "data": "payload"
+  }
+}

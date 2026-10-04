@@ -1,0 +1,8 @@
+row,ms,event,payload
+0,0,measurement,"{""channel"": ""temperature"", ""value"": 25, ""unit"": ""degC"", ""sample_time_ms"": 0, ""receive_time_ms"": 0, ""quality"": ""good"", ""sequence"": 0, ""calibration_id"": ""synthetic-thermal""}"
+1,0,state,"{""state"": ""heating"", ""history"": []}"
+2,0,command,"{""heater"": 1}"
+3,75,tick,{}
+4,80,fault,"{""cause"": ""stale-temperature""}"
+5,80,state,"{""state"": ""fault"", ""history"": [""stale-temperature""]}"
+6,80,tick,{}

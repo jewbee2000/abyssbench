@@ -1,0 +1,1263 @@
+{
+  "schema_version": 1,
+  "status": "fail",
+  "window_ms": [
+    0,
+    1500
+  ],
+  "clock_assumptions": "single monotonic simulation clock; integer ms; no extrapolation",
+  "checks": [
+    {
+      "id": "I01",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I02",
+      "status": "fail",
+      "details": [
+        {
+          "trigger_ms": 660,
+          "deadline_ms": 670,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 670,
+          "deadline_ms": 680,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 680,
+          "deadline_ms": 690,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 690,
+          "deadline_ms": 700,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 700,
+          "deadline_ms": 710,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 710,
+          "deadline_ms": 720,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 720,
+          "deadline_ms": 730,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 730,
+          "deadline_ms": 740,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 740,
+          "deadline_ms": 750,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 750,
+          "deadline_ms": 760,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 760,
+          "deadline_ms": 770,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 770,
+          "deadline_ms": 780,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 780,
+          "deadline_ms": 790,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 790,
+          "deadline_ms": 800,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 800,
+          "deadline_ms": 810,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 810,
+          "deadline_ms": 820,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 820,
+          "deadline_ms": 830,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 830,
+          "deadline_ms": 840,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 840,
+          "deadline_ms": 850,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 850,
+          "deadline_ms": 860,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 860,
+          "deadline_ms": 870,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 870,
+          "deadline_ms": 880,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 880,
+          "deadline_ms": 890,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 890,
+          "deadline_ms": 900,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 900,
+          "deadline_ms": 910,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 910,
+          "deadline_ms": 920,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 920,
+          "deadline_ms": 930,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 930,
+          "deadline_ms": 940,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 940,
+          "deadline_ms": 950,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 950,
+          "deadline_ms": 960,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 960,
+          "deadline_ms": 970,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 970,
+          "deadline_ms": 980,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 980,
+          "deadline_ms": 990,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 990,
+          "deadline_ms": 1000,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1000,
+          "deadline_ms": 1010,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1010,
+          "deadline_ms": 1020,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1020,
+          "deadline_ms": 1030,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1030,
+          "deadline_ms": 1040,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1040,
+          "deadline_ms": 1050,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1050,
+          "deadline_ms": 1060,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1060,
+          "deadline_ms": 1070,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1070,
+          "deadline_ms": 1080,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1080,
+          "deadline_ms": 1090,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1090,
+          "deadline_ms": 1100,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1100,
+          "deadline_ms": 1110,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1110,
+          "deadline_ms": 1120,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1120,
+          "deadline_ms": 1130,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1130,
+          "deadline_ms": 1140,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1140,
+          "deadline_ms": 1150,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1150,
+          "deadline_ms": 1160,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1160,
+          "deadline_ms": 1170,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1170,
+          "deadline_ms": 1180,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1180,
+          "deadline_ms": 1190,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1190,
+          "deadline_ms": 1200,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1200,
+          "deadline_ms": 1210,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1210,
+          "deadline_ms": 1220,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1220,
+          "deadline_ms": 1230,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1230,
+          "deadline_ms": 1240,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1240,
+          "deadline_ms": 1250,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1250,
+          "deadline_ms": 1260,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1260,
+          "deadline_ms": 1270,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1270,
+          "deadline_ms": 1280,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1280,
+          "deadline_ms": 1290,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1290,
+          "deadline_ms": 1300,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1300,
+          "deadline_ms": 1310,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1310,
+          "deadline_ms": 1320,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1320,
+          "deadline_ms": 1330,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1330,
+          "deadline_ms": 1340,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1340,
+          "deadline_ms": 1350,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1350,
+          "deadline_ms": 1360,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1360,
+          "deadline_ms": 1370,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1370,
+          "deadline_ms": 1380,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1380,
+          "deadline_ms": 1390,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1390,
+          "deadline_ms": 1400,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1400,
+          "deadline_ms": 1410,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1410,
+          "deadline_ms": 1420,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1420,
+          "deadline_ms": 1430,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1430,
+          "deadline_ms": 1440,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1440,
+          "deadline_ms": 1450,
+          "observed_ms": 1450,
+          "latency_ms": 10,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1450,
+          "deadline_ms": 1460,
+          "observed_ms": 1450,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1460,
+          "deadline_ms": 1470,
+          "observed_ms": 1460,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1470,
+          "deadline_ms": 1480,
+          "observed_ms": 1470,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1480,
+          "deadline_ms": 1490,
+          "observed_ms": 1480,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1490,
+          "deadline_ms": 1500,
+          "observed_ms": 1490,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        },
+        {
+          "trigger_ms": 1500,
+          "deadline_ms": 1510,
+          "observed_ms": 1500,
+          "latency_ms": 0,
+          "evidence_kind": "state"
+        }
+      ]
+    },
+    {
+      "id": "I03",
+      "status": "fail",
+      "details": [
+        {
+          "trigger_ms": 660,
+          "deadline_ms": 670,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 670,
+          "deadline_ms": 680,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 680,
+          "deadline_ms": 690,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 690,
+          "deadline_ms": 700,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 700,
+          "deadline_ms": 710,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 710,
+          "deadline_ms": 720,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 720,
+          "deadline_ms": 730,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 730,
+          "deadline_ms": 740,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 740,
+          "deadline_ms": 750,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 750,
+          "deadline_ms": 760,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 760,
+          "deadline_ms": 770,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 770,
+          "deadline_ms": 780,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 780,
+          "deadline_ms": 790,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 790,
+          "deadline_ms": 800,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 800,
+          "deadline_ms": 810,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 810,
+          "deadline_ms": 820,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 820,
+          "deadline_ms": 830,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 830,
+          "deadline_ms": 840,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 840,
+          "deadline_ms": 850,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 850,
+          "deadline_ms": 860,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 860,
+          "deadline_ms": 870,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 870,
+          "deadline_ms": 880,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 880,
+          "deadline_ms": 890,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 890,
+          "deadline_ms": 900,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 900,
+          "deadline_ms": 910,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 910,
+          "deadline_ms": 920,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 920,
+          "deadline_ms": 930,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 930,
+          "deadline_ms": 940,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 940,
+          "deadline_ms": 950,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 950,
+          "deadline_ms": 960,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 960,
+          "deadline_ms": 970,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 970,
+          "deadline_ms": 980,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 980,
+          "deadline_ms": 990,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 990,
+          "deadline_ms": 1000,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1000,
+          "deadline_ms": 1010,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1010,
+          "deadline_ms": 1020,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1020,
+          "deadline_ms": 1030,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1030,
+          "deadline_ms": 1040,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1040,
+          "deadline_ms": 1050,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1050,
+          "deadline_ms": 1060,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1060,
+          "deadline_ms": 1070,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1070,
+          "deadline_ms": 1080,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1080,
+          "deadline_ms": 1090,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1090,
+          "deadline_ms": 1100,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1100,
+          "deadline_ms": 1110,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1110,
+          "deadline_ms": 1120,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1120,
+          "deadline_ms": 1130,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1130,
+          "deadline_ms": 1140,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1140,
+          "deadline_ms": 1150,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1150,
+          "deadline_ms": 1160,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1160,
+          "deadline_ms": 1170,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1170,
+          "deadline_ms": 1180,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1180,
+          "deadline_ms": 1190,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1190,
+          "deadline_ms": 1200,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1200,
+          "deadline_ms": 1210,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1210,
+          "deadline_ms": 1220,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1220,
+          "deadline_ms": 1230,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1230,
+          "deadline_ms": 1240,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1240,
+          "deadline_ms": 1250,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1250,
+          "deadline_ms": 1260,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1260,
+          "deadline_ms": 1270,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1270,
+          "deadline_ms": 1280,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1280,
+          "deadline_ms": 1290,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1290,
+          "deadline_ms": 1300,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1300,
+          "deadline_ms": 1310,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1310,
+          "deadline_ms": 1320,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1320,
+          "deadline_ms": 1330,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1330,
+          "deadline_ms": 1340,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1340,
+          "deadline_ms": 1350,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1350,
+          "deadline_ms": 1360,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1360,
+          "deadline_ms": 1370,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1370,
+          "deadline_ms": 1380,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1380,
+          "deadline_ms": 1390,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1390,
+          "deadline_ms": 1400,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1400,
+          "deadline_ms": 1410,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1410,
+          "deadline_ms": 1420,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1420,
+          "deadline_ms": 1430,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1430,
+          "deadline_ms": 1440,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1440,
+          "deadline_ms": 1450,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1450,
+          "deadline_ms": 1460,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1460,
+          "deadline_ms": 1470,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1470,
+          "deadline_ms": 1480,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1480,
+          "deadline_ms": 1490,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1490,
+          "deadline_ms": 1500,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        },
+        {
+          "trigger_ms": 1500,
+          "deadline_ms": 1510,
+          "observed_ms": null,
+          "latency_ms": null,
+          "evidence_kind": "fault"
+        }
+      ]
+    },
+    {
+      "id": "I04",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I05",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I06",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I07",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I08",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I09",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I10",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I11",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "id": "I12",
+      "status": "pass",
+      "details": []
+    }
+  ]
+}

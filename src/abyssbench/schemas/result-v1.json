@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abyssbench:result:1",
+  "type": "object", "required": ["schema_version", "status", "window_ms", "clock_assumptions", "checks"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["pass", "fail", "inconclusive"]},
+    "window_ms": {"type": ["array", "null"], "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+    "clock_assumptions": {"type": "string"},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["id", "status", "details"], "properties": {
+      "id": {"type": "string"}, "status": {"enum": ["pass", "fail", "inconclusive", "not_applicable"]}, "details": {"type": "array"}
+    }}}
+  }
+}

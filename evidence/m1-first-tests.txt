@@ -1,0 +1,693 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF              [100%]
+================================== FAILURES ===================================
+____________________ test_sample_age_boundaries[199-valid] ____________________
+tests\acceptance\test_contract.py:37: in test_sample_age_boundaries
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_sample_age_boundaries[200-valid] ____________________
+tests\acceptance\test_contract.py:37: in test_sample_age_boundaries
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_sample_age_boundaries[201-stale] ____________________
+tests\acceptance\test_contract.py:37: in test_sample_age_boundaries
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_sample_age_boundaries[-1-future] ____________________
+tests\acceptance\test_contract.py:37: in test_sample_age_boundaries
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________ test_all_state_event_pairs[connect-disconnected] _______________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[connect-ready] __________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[connect-armed] __________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_________________ test_all_state_event_pairs[connect-running] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[connect-fault] __________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________ test_all_state_event_pairs[connect-recovery_required] ____________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_all_state_event_pairs[disconnect-disconnected] _____________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[disconnect-ready] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[disconnect-armed] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_______________ test_all_state_event_pairs[disconnect-running] ________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[disconnect-fault] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________ test_all_state_event_pairs[disconnect-recovery_required] ___________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[arm-disconnected] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[arm-ready] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[arm-armed] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[arm-running] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[arm-fault] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________ test_all_state_event_pairs[arm-recovery_required] ______________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_______________ test_all_state_event_pairs[start-disconnected] ________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[start-ready] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[start-armed] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[start-running] __________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[start-fault] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_all_state_event_pairs[start-recovery_required] _____________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[stop-disconnected] ________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[stop-ready] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[stop-armed] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[stop-running] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[stop-fault] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_all_state_event_pairs[stop-recovery_required] ______________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________ test_all_state_event_pairs[ack-disconnected] _________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[ack-ready] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[ack-armed] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[ack-running] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+____________________ test_all_state_event_pairs[ack-fault] ____________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________ test_all_state_event_pairs[ack-recovery_required] ______________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_______________ test_all_state_event_pairs[fault-disconnected] ________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[fault-ready] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[fault-armed] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_all_state_event_pairs[fault-running] __________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_all_state_event_pairs[fault-fault] ___________________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_all_state_event_pairs[fault-recovery_required] _____________
+tests\acceptance\test_contract.py:49: in test_all_state_event_pairs
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________________ test_expiry_boundary[99-applied] _______________________
+tests\acceptance\test_contract.py:65: in test_expiry_boundary
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________________ test_expiry_boundary[100-applied] ______________________
+tests\acceptance\test_contract.py:65: in test_expiry_boundary
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________________ test_expiry_boundary[101-expired] ______________________
+tests\acceptance\test_contract.py:65: in test_expiry_boundary
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_duplicate_and_conflicting_identity ___________________
+tests\acceptance\test_contract.py:72: in test_duplicate_and_conflicting_identity
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_deterministic_fault_schedule[freeze-expected0] _____________
+tests\acceptance\test_contract.py:82: in test_deterministic_fault_schedule
+    events = run(fault=fault)
+             ^^^^^^^^^^^^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________ test_deterministic_fault_schedule[disconnect-expected1] ___________
+tests\acceptance\test_contract.py:82: in test_deterministic_fault_schedule
+    events = run(fault=fault)
+             ^^^^^^^^^^^^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_deterministic_fault_schedule[range-expected2] ______________
+tests\acceptance\test_contract.py:82: in test_deterministic_fault_schedule
+    events = run(fault=fault)
+             ^^^^^^^^^^^^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_deterministic_fault_schedule[stuck-expected3] ______________
+tests\acceptance\test_contract.py:82: in test_deterministic_fault_schedule
+    events = run(fault=fault)
+             ^^^^^^^^^^^^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+_____________ test_deterministic_fault_schedule[delay-expected4] ______________
+tests\acceptance\test_contract.py:82: in test_deterministic_fault_schedule
+    events = run(fault=fault)
+             ^^^^^^^^^^^^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+________________________________ test_healthy _________________________________
+tests\acceptance\test_contract.py:97: in test_healthy
+    events = run()
+             ^^^^^
+src\abyssbench\runner.py:52: in run
+    ctrl = controller or FluidController()
+                         ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+______________________ test_recovery_requires_all_steps _______________________
+tests\acceptance\test_contract.py:104: in test_recovery_requires_all_steps
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+__________________ test_stop_wins_and_arm_start_are_separate __________________
+tests\acceptance\test_contract.py:119: in test_stop_wins_and_arm_start_are_separate
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+___________________ test_heartbeat_and_actuator_boundaries ____________________
+tests\acceptance\test_contract.py:126: in test_heartbeat_and_actuator_boundaries
+    c = FluidController()
+        ^^^^^^^^^^^^^^^^^
+src\abyssbench\controller.py:11: in __init__
+    self.recipe = Recipe.from_dict((recipe or Recipe()).to_dict())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\abyssbench\contracts.py:106: in from_dict
+    raise InputError('recipe requires 1..32 steps')
+E   abyssbench.contracts.InputError: recipe requires 1..32 steps
+============================== warnings summary ===============================
+.venv\Lib\site-packages\antlr4\Lexer.py:12
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Lexer.py:12: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\antlr4\Parser.py:6
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\antlr4\Parser.py:6: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\StlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\ltl\LtlParser.py:5: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4
+  C:\Users\Walt\Documents\Codex\2026-10-03\g\outputs\projects\abyssbench\.venv\Lib\site-packages\rtamt\antlr\parser\stl\LtlLexer.py:4: DeprecationWarning: typing.io is deprecated, import directly from typing instead. typing.io will be removed in Python 3.13.
+    from typing.io import TextIO
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/acceptance/test_contract.py::test_sample_age_boundaries[199-valid]
+FAILED tests/acceptance/test_contract.py::test_sample_age_boundaries[200-valid]
+FAILED tests/acceptance/test_contract.py::test_sample_age_boundaries[201-stale]
+FAILED tests/acceptance/test_contract.py::test_sample_age_boundaries[-1-future]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[start-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-disconnected]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-ready]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-armed]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-running]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-fault]
+FAILED tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-recovery_required]
+FAILED tests/acceptance/test_contract.py::test_expiry_boundary[99-applied] - ...
+FAILED tests/acceptance/test_contract.py::test_expiry_boundary[100-applied]
+FAILED tests/acceptance/test_contract.py::test_expiry_boundary[101-expired]
+FAILED tests/acceptance/test_contract.py::test_duplicate_and_conflicting_identity
+FAILED tests/acceptance/test_contract.py::test_deterministic_fault_schedule[freeze-expected0]
+FAILED tests/acceptance/test_contract.py::test_deterministic_fault_schedule[disconnect-expected1]
+FAILED tests/acceptance/test_contract.py::test_deterministic_fault_schedule[range-expected2]
+FAILED tests/acceptance/test_contract.py::test_deterministic_fault_schedule[stuck-expected3]
+FAILED tests/acceptance/test_contract.py::test_deterministic_fault_schedule[delay-expected4]
+FAILED tests/acceptance/test_contract.py::test_healthy - abyssbench.contracts...
+FAILED tests/acceptance/test_contract.py::test_recovery_requires_all_steps - ...
+FAILED tests/acceptance/test_contract.py::test_stop_wins_and_arm_start_are_separate
+FAILED tests/acceptance/test_contract.py::test_heartbeat_and_actuator_boundaries
+59 failed, 5 warnings in 1.10s

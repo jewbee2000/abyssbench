@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "channels": {
+    "temperature": "degC"
+  },
+  "rules": [
+    {
+      "id": "TH-01",
+      "type": "sample_age",
+      "channel": "temperature",
+      "max_age_ms": 75,
+      "response": {
+        "heater": 0
+      },
+      "deadline_ms": 15
+    },
+    {
+      "id": "TH-02",
+      "type": "response",
+      "trigger_kind": "fault",
+      "response": {
+        "heater": 0
+      },
+      "deadline_ms": 15
+    },
+    {
+      "id": "TH-03",
+      "type": "range",
+      "channel": "temperature",
+      "min": 0,
+      "max": 120
+    },
+    {
+      "id": "TH-04",
+      "type": "transition",
+      "from": "fault",
+      "to": "heating"
+    }
+  ]
+}

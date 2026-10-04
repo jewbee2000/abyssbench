@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:abyssbench:rules:1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "channels", "rules"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "channels": {"type": "object", "minProperties": 1, "additionalProperties": {"enum": ["Pa", "m3/s", "degC", "1"]}},
+    "rules": {"type": "array", "minItems": 1, "maxItems": 32, "items": {"oneOf": [
+      {"type": "object", "additionalProperties": false, "required": ["id", "type", "channel", "min", "max"], "properties": {
+        "id": {"type": "string", "minLength": 1}, "type": {"const": "range"}, "channel": {"type": "string"},
+        "min": {"type": "number"}, "max": {"type": "number"}, "when_state": {"type": "string"},
+        "response": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number"}}, "deadline_ms": {"type": "integer", "minimum": 0, "maximum": 60000}
+      }},
+      {"type": "object", "additionalProperties": false, "required": ["id", "type", "channel", "max_age_ms"], "properties": {
+        "id": {"type": "string", "minLength": 1}, "type": {"const": "sample_age"}, "channel": {"type": "string"},
+        "max_age_ms": {"type": "integer", "minimum": 0}, "when_state": {"type": "string"},
+        "response": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number"}}, "deadline_ms": {"type": "integer", "minimum": 0, "maximum": 60000}
+      }},
+      {"type": "object", "additionalProperties": false, "required": ["id", "type", "trigger_kind", "response", "deadline_ms"], "properties": {
+        "id": {"type": "string", "minLength": 1}, "type": {"const": "response"}, "trigger_kind": {"type": "string"},
+        "response": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number"}}, "deadline_ms": {"type": "integer", "minimum": 0, "maximum": 60000}
+      }},
+      {"type": "object", "additionalProperties": false, "required": ["id", "type", "from", "to"], "properties": {
+        "id": {"type": "string", "minLength": 1}, "type": {"const": "transition"}, "from": {"type": "string"}, "to": {"type": "string"}
+      }}
+    ]}}
+  }
+}

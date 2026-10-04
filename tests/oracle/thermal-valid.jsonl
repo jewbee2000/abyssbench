@@ -1,0 +1,8 @@
+{"schema_version": 1, "clock": "simulation", "sequence": 0, "time_ms": 0, "kind": "measurement", "data": {"channel": "temperature", "value": 25, "unit": "degC", "sample_time_ms": 0, "receive_time_ms": 0, "quality": "good", "sequence": 0, "calibration_id": "synthetic-thermal"}}
+{"schema_version": 1, "clock": "simulation", "sequence": 1, "time_ms": 0, "kind": "state", "data": {"state": "heating", "history": []}}
+{"schema_version": 1, "clock": "simulation", "sequence": 2, "time_ms": 0, "kind": "command", "data": {"heater": 1}}
+{"schema_version": 1, "clock": "simulation", "sequence": 3, "time_ms": 75, "kind": "tick", "data": {}}
+{"schema_version": 1, "clock": "simulation", "sequence": 4, "time_ms": 80, "kind": "fault", "data": {"cause": "stale-temperature"}}
+{"schema_version": 1, "clock": "simulation", "sequence": 5, "time_ms": 80, "kind": "state", "data": {"state": "fault", "history": ["stale-temperature"]}}
+{"schema_version": 1, "clock": "simulation", "sequence": 6, "time_ms": 95, "kind": "command", "data": {"heater": 0}}
+{"schema_version": 1, "clock": "simulation", "sequence": 7, "time_ms": 95, "kind": "tick", "data": {}}

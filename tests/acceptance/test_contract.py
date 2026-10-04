@@ -49,11 +49,15 @@ def test_all_state_event_pairs(state, event):
     c = FluidController()
     c.state = state
     c.connected = state != 'disconnected'
+    if event == 'connect':
+        c.connected = False
     if state in ('fault', 'recovery_required'):
         c.history = ['old_fault']
+        c.acknowledged = False
     c.valid_since = 0
     requests = [request(event, 1000)] if event not in ('connect', 'disconnect', 'fault') else []
-    result = c.step(tick(1000, requests, connected=event != 'disconnect',
+    connection = event == 'connect' or state != 'disconnected'
+    result = c.step(tick(1000, requests, connected=connection and event != 'disconnect',
                          measurements=readings(1000, quality='bad') if event == 'fault' else readings(1000)))
     index = ORACLE['state_events'].index(event)
     assert result.state == ORACLE['state_table'][state][index]
