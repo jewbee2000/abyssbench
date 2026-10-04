@@ -1,0 +1,234 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_publication_audit.py",
+    "tests/acceptance/test_replay.py",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "source": {
+    "code_commit": "39dfee9649634778f56356dab8485b6b277f169a",
+    "dirty_tree": true,
+    "diff_hash": "42051e9261e3295f24ec697a4bf8e9cf2d5dbe83cae8186643a5ef31b21aef41",
+    "code_hash": "d3bcd13c154b57bf9c0a03ffa3511cb8c6ed1e2d6a80eeca2e8b26f5ae9b8329",
+    "oracle_hash": "4eb89ebd0974810a315c1e4d07878cd7b15523045d1aa6c34f8ea5192301c4f1",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "4eb89ebd0974810a315c1e4d07878cd7b15523045d1aa6c34f8ea5192301c4f1",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[0-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[120-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[121-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[False-fail-range]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[False-fail-sample_age]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[True-pass-range]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[True-pass-sample_age]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_does_not_complete_a_future_response_window",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_generic_import_has_no_fluid_model_dependency",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[100]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[1500]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_installed_baseline_evidence",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-13"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[valid-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[violating-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[incomplete-inconclusive]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[5-None-inconclusive]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-None-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-10-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[11-11-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_missing_sample_and_log_errors",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-14",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_unknown_and_malformed_rules_rejected",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_old_packet_is_data_not_structural_disorder",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02"
+      ]
+    }
+  ],
+  "result_hash": "16867963992a4f393975679998cc0aea211c52e02bfeb32fd52445dab144a742"
+}

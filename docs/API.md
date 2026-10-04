@@ -48,6 +48,12 @@ cannot be inferred from a held prior value. No triggers means a response rule
 passes vacuously inside a nonempty valid window; no eligible signal observation
 is inconclusive. Generic state labels are user-defined.
 
+For range/age responses, a command at the observation timestamp must follow
+the measurement and any applicable state prerequisite in event sequence order.
+A single observation can establish a pointwise range verdict, but cannot complete
+an unsatisfied future response window. The pinned RTAMT adapter handles its
+two-point numeric-input requirement without adding events or extending the window.
+
 `monitor(events, profile="fluid")` additionally returns all twelve reference
 invariants I01–I12. It independently reconstructs measurements, heartbeat,
 connection, valve mismatch, command acceptance, history and recovery. It never

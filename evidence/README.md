@@ -2,6 +2,11 @@
 
 Start with [REQUIREMENT_EVIDENCE.md](REQUIREMENT_EVIDENCE.md) for the 21 applicable Must requirements and [progress.md](progress.md) for the local milestone history and retained failures.
 
+The separate [publication audit](publication-audit/README.md) preserves the
+original 116-test release and records two further fixes, eight added regression
+cases, 124 full-suite passes and 123 fresh-wheel passes. Original release hashes
+remain intact; the current source is identified by the audit's own hashes.
+
 - [acceptance-run.json](acceptance-run.json) and [pytest-final.txt](pytest-final.txt): full independent open suite, including the 1000-example property check.
 - [fresh-install-run.json](fresh-install-run.json): checks against a wheel installed in a new virtual environment.
 - [baseline.json](baseline.json) and [consumer-walkthrough.json](consumer-walkthrough.json): installed-library comparison and agent-executed non-default consumer failure/correction.

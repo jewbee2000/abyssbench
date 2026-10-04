@@ -25,3 +25,7 @@ See IMPLEMENTATION_PLAN.md and docs/REQUIREMENTS.md.
 - [ ] Complete Walter's article review and verified-link update; publish only on a later explicit instruction.
 
 Walter's exact actions and suggested trial request are in docs/NEXT_STEPS.md.
+
+## Separate publication audit
+
+Two uncovered generic-monitor cases were fixed after the initial release: singleton numerical input and response ordering within one timestamp. Eight new literal regressions preserve their pre-fix failures. Current suite: 124 passes; fresh wheel: 123 passes with one property test deselected. See evidence/publication-audit/README.md; initial evidence is retained unchanged.

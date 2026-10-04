@@ -1,0 +1,107 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_publication_audit.py",
+    "--tb=short"
+  ],
+  "exit_code": 1,
+  "source": {
+    "code_commit": "39dfee9649634778f56356dab8485b6b277f169a",
+    "dirty_tree": true,
+    "diff_hash": "6b4c9d581ce4b92ea3728a2344944fb40611d1110ce41bcc7df4f20aa40e5616",
+    "code_hash": "69014417be7e800fbb44cbccedf222e316af2c194fc04121cfe308e39cb3fadf",
+    "oracle_hash": "4eb89ebd0974810a315c1e4d07878cd7b15523045d1aa6c34f8ea5192301c4f1",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "4eb89ebd0974810a315c1e4d07878cd7b15523045d1aa6c34f8ea5192301c4f1",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[0-pass]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[120-pass]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_range_keeps_its_actual_window[121-fail]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[False-fail-range]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[False-fail-sample_age]",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[True-pass-range]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_response_cannot_precede_its_measurement_at_the_same_timestamp[True-pass-sample_age]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_publication_audit.py::test_single_observation_does_not_complete_a_future_response_window",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    }
+  ],
+  "result_hash": "173b0af0716d606dd68f65074db798bb80facdf69ffae1b8b896b711289e3bbe"
+}

@@ -1,0 +1,13 @@
+{
+  "source": "evidence/publication-audit/stuck-valve-events.jsonl",
+  "source_sha256": "febda50efeaedab381ebf0920c2d10ee8eec48e66c5fd9aae0f8223b4b09d285",
+  "onset_ms": 500,
+  "detection_ms": 1010,
+  "safe_command_ms": 1010,
+  "matplotlib_version": "3.11.2",
+  "outputs": {
+    "stuck-valve-timeline.png": "c723bbeb44652fbdfdc7a3dd9c6a2f04ad027f83f30f27bdea05f688845c9b86",
+    "stuck-valve-timeline.svg": "1ba7b6765777869aacd56bc5fbd432244b4310aaaf61311ef2c5b7a4b4ec15ab"
+  },
+  "boundary": "Replot of original archived synthetic trace, not physical measurement."
+}

@@ -22,7 +22,12 @@ def range_robustness(values, low, high):
     spec.declare_var('value', 'float')
     spec.spec = f'(value >= {float(low)}) and (value <= {float(high)})'
     spec.parse()
-    return [r for _, r in spec.evaluate({'time': list(range(len(values))), 'value': values})]
+    # RTAMT 0.4.10 requires two points even for this pointwise predicate.
+    # Repeat a singleton only inside that numeric adapter, then discard the
+    # extra result. No event or observation-window endpoint is added.
+    samples = values * 2 if len(values) == 1 else values
+    return [r for _, r in spec.evaluate({'time': list(range(len(samples))),
+                                        'value': samples})][:len(values)]
 
 
 class Ledger:
@@ -72,7 +77,9 @@ class Ledger:
 
 def frames(events):
     measurements = {}
+    measurement_sequences = {}
     state: dict[str, Any] = {'state': None, 'history': []}
+    state_sequence = -1
     connection = None
     heartbeat = None
     valve = None
@@ -85,8 +92,10 @@ def frames(events):
             data = e['data']
             if e['kind'] == 'measurement':
                 measurements[data['channel']] = data
+                measurement_sequences[data['channel']] = e['sequence']
             elif e['kind'] == 'state':
                 state = data
+                state_sequence = e['sequence']
             elif e['kind'] == 'connection':
                 connection = data['connected']
             elif e['kind'] == 'heartbeat':
@@ -96,6 +105,8 @@ def frames(events):
             elif e['kind'] == 'command':
                 previous_command.update(data)
         yield {'time': now, 'measurements': dict(measurements), 'state': state,
+               'measurement_sequences': dict(measurement_sequences),
+               'state_sequence': state_sequence,
                'old_state': old_state, 'connected': connection, 'heartbeat': heartbeat,
                'valve': valve, 'prior_command': prior, 'events': group}
 
@@ -149,7 +160,11 @@ def generic(ledger, rows, config):
                 m = row['measurements'][channel]
                 if margin < 0 or m['quality'] != 'good':
                     if 'response' in rule:
-                        ledger.commands(identity, row['time'], rule['deadline_ms'], rule['response'])
+                        sequence = max(row['events'][0]['sequence'],
+                                       row['measurement_sequences'][channel],
+                                       row['state_sequence'] if 'when_state' in rule else -1)
+                        ledger.commands(identity, row['time'], rule['deadline_ms'],
+                                        rule['response'], sequence)
                     else:
                         ledger.mark(identity, 'fail', {'time_ms': row['time'], 'channel': channel,
                                                        'robustness': margin})

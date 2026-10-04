@@ -1,0 +1,1001 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "source": {
+    "code_commit": "39dfee9649634778f56356dab8485b6b277f169a",
+    "dirty_tree": false,
+    "diff_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "code_hash": "69014417be7e800fbb44cbccedf222e316af2c194fc04121cfe308e39cb3fadf",
+    "oracle_hash": "4064c30ab8b552febc82b93df4bd2383d289a0a7a5706c2e71515993348faba6",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "4064c30ab8b552febc82b93df4bd2383d289a0a7a5706c2e71515993348faba6",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_incomplete_writer_and_corruption",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-10"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-10"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-08",
+        "AB-10",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_offline_egress_and_html_escape",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-21"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[valid-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[violating-1]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[incomplete-2]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_oversize_and_timeout",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-20"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_sample_age_boundaries[199-valid]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-04"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_sample_age_boundaries[200-valid]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-04"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_sample_age_boundaries[201-stale]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-04"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_sample_age_boundaries[-1-future]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-04"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[connect-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[disconnect-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[arm-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[start-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[stop-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[ack-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-disconnected]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-ready]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-armed]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-running]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-fault]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_all_state_event_pairs[fault-recovery_required]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_expiry_boundary[99-applied]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-07"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_expiry_boundary[100-applied]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-07"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_expiry_boundary[101-expired]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-07"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_duplicate_and_conflicting_identity",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-07"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[freeze-expected0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-05",
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[disconnect-expected1]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-05",
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[range-expected2]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-05",
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[stuck-expected3]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-05",
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_deterministic_fault_schedule[delay-expected4]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-05",
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_healthy",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_recovery_requires_all_steps",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-06"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_stop_wins_and_arm_start_are_separate",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-03"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_contract.py::test_heartbeat_and_actuator_boundaries",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-08"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_external_controller.py::test_external_controller_only_public_interface",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-15"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[freshness_receive-freeze-I03]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[inverted_valve-range-I05]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[pressure_unit-None-I03]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[unsafe_reconnect-disconnect-I06]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[unbounded_retry-range-I04]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_six_real_controller_mutations[lost_latch-disconnect-I07]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I01]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I02]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I03]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I04]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I05]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I06]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I07]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I08]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I09]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I10]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I11]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_each_monitor_invariant_has_a_negative_control[I12]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-09",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_1000_bounded_sequences",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[nan]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[unit]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[unknown]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_recipe_invalid_input[duration]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-11"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_monitor_independence.py::test_hand_calculated_plant_and_convergence",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-01"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[nan]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_nonfinite_trace.py::test_nonfinite_actuator_evidence_is_rejected[-inf]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_release_evidence.py::test_openhtf_requirement_attachment",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-18"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_release_evidence.py::test_result_schema_and_unsupported_trigger",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_release_evidence.py::test_case_event_limits_and_executed_performance",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-20"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_release_evidence.py::test_executed_clean_consumer_walkthrough",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-12",
+        "AB-22"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_release_evidence.py::test_license_and_fixture_provenance",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-21"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_generic_import_has_no_fluid_model_dependency",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[100]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[1500]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_installed_baseline_evidence",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-13"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[valid-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[violating-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_external_thermal_trace[incomplete-inconclusive]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-14",
+        "AB-17"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[5-None-inconclusive]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-None-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[10-10-pass]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_deadline_and_pending_window[11-11-fail]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_missing_sample_and_log_errors",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02",
+        "AB-14",
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_unknown_and_malformed_rules_rejected",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16",
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_old_packet_is_data_not_structural_disorder",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-02"
+      ]
+    }
+  ],
+  "result_hash": "8914d5ad4bf7f301cf99041218dcf37a66f9cebf63b45975d03cff4324111cd9"
+}

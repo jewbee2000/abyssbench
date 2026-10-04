@@ -10,11 +10,14 @@
   "requirements_revision": "2026-10-04",
   "usefulness_validation": "installed_baseline_and_agent_executed_clean_consumer_verified; practitioner_adoption_unverified",
   "must_requirements_verified": 21,
-  "full_suite_passed": 116,
+  "full_suite_passed": 124,
   "property_examples_configured": 1000,
-  "fresh_wheel_checks_passed": 115,
+  "fresh_wheel_checks_passed": 123,
   "should_disposition": "AB-18 OpenHTF passed; Parquet deferred",
   "evidence": "evidence/REQUIREMENT_EVIDENCE.md",
   "limitations": "single clock; synthetic uncalibrated plant; trusted callbacks; Windows/Python 3.12 verified; no physical or live model validation",
-  "next_milestone": "one useful external trace and one independent engineer trial; Windows/Python 3.12 CI is the next implementation task"
+  "next_milestone": "one useful external trace and one independent engineer trial; Windows/Python 3.12 CI is the next implementation task",
+  "initial_release_full_suite_passed": 116,
+  "initial_release_fresh_wheel_checks_passed": 115,
+  "publication_audit_evidence": "evidence/publication-audit/README.md"
 }

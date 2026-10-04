@@ -1,7 +1,8 @@
 # AbyssBench
 
 [Source repository](https://github.com/jewbee2000/abyssbench). The deterministic
-offline release is verified; the article remains unpublished. Follow
+offline release and a separate [publication audit](evidence/publication-audit/README.md)
+have reproducible evidence. Follow
 [the next-step checklist](docs/NEXT_STEPS.md) for a real trace, an independent
 engineer's trial, and the next implementation work.
 
@@ -39,6 +40,10 @@ CLI evaluation runs in a killable data-only worker with a 60-second maximum.
 
 ## Evidence and reproduction
 
+- [Publication audit](evidence/publication-audit/README.md): two additional edge
+  cases fixed after the original 116-test release; 124 current full-suite passes,
+  123 fresh-wheel passes, preserved failing regressions, and an evidence-derived
+  [stuck-valve timeline](evidence/publication-audit/stuck-valve-timeline.png).
 - [M0 comparison and usefulness decision](docs/BASELINE.md): installed pytest,
   RTAMT and OpenHTF reproduce stale/reconnect failures. The contribution is
   provenance, bounded finite-window results and engineering evidence glue.
@@ -50,7 +55,9 @@ CLI evaluation runs in a killable data-only worker with a 60-second maximum.
 - [Local performance measurements](evidence/performance.json) and
   [licensing/data handling](docs/LICENSING.md).
 
-Run the complete local evidence workflow:
+Run the local evidence workflow below. The baseline, benchmark and walkthrough
+commands regenerate their named evidence files. Use the shown test output path
+to keep the archived original acceptance run intact:
 
 ```powershell
 .venv\Scripts\python tools/baseline.py
@@ -61,9 +68,12 @@ Run the complete local evidence workflow:
 .venv\Scripts\python tools/consumer_walkthrough.py --directory artifacts/new-consumer
 .venv\Scripts\python -m ruff check src tests tools examples
 .venv\Scripts\python -m mypy src/abyssbench
+$env:AB_EVIDENCE_PATH = "artifacts/test-run.json"
 .venv\Scripts\python -m pytest -q
-.venv\Scripts\python tools/release_evidence.py
 ```
+
+`tools/release_evidence.py` is the original release-archive compiler; run it only
+when intentionally replacing that archive after all of its inputs are refreshed.
 
 The walkthrough creates another clean venv, installs the pinned dependencies
 and wheel, checks a non-default failed thermal input, corrects it, tests a
@@ -89,5 +99,6 @@ issuance does not establish real actuator motion, functional safety, hard
 real-time behavior or lab qualification. Multi-clock reconstruction, PLC/C++
 adapters, hardware control, CAD and live-model campaigns are excluded. OpenHTF
 attachments work; optional Parquet is deferred. The source repository was
-pushed with Walter's authorization on 2026-10-04. The [blog draft](docs/BLOG_DRAFT.md) remains
-unpublished. Code, fixtures and original docs are MIT licensed.
+pushed with Walter's authorization on 2026-10-04. The earlier per-project
+[blog draft](docs/BLOG_DRAFT.md) is retained as a historical writing artifact.
+Code, fixtures and original docs are MIT licensed.
