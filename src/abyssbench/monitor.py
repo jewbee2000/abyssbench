@@ -7,7 +7,7 @@ import json
 import time
 from bisect import bisect_left
 from collections import defaultdict
-from itertools import groupby
+from itertools import groupby, pairwise
 from typing import Any
 
 import rtamt
@@ -169,6 +169,11 @@ def generic(ledger, rows, config):
 def fluid(ledger, rows):
     for i in range(1, 13):
         ledger.init(f'I{i:02}')
+    ticks = ledger.by_kind['tick']
+    tick_times = [e['time_ms'] for e in ticks]
+    if any(b-a != 10 for a, b in pairwise(tick_times)):
+        for identity in ('I02', 'I03', 'I04', 'I05', 'I08', 'I12'):
+            ledger.mark(identity, 'inconclusive', {'reason': 'missing or irregular 10 ms controller tick evidence'})
     required = {'pressure1': 'Pa', 'pressure2': 'Pa', 'flow': 'm3/s'}
     pressure_margins = {}
     for channel in ('pressure1', 'pressure2'):

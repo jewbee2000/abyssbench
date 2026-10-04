@@ -32,7 +32,7 @@ def plot(series, title, end, markers=(), step=False):
         parts.append(f'<path d="M{x(at):.2f} 30 V135" stroke="#b32626" stroke-dasharray="4 3"/>')
         parts.append(f'<text x="{x(at)+5:.2f}" y="45" fill="#b32626">{html.escape(label)}</text>')
     parts.append('</svg>')
-    return ''.join(parts)
+    return '<div class="chart">' + ''.join(parts) + '</div>'
 
 
 def render_report(cases):
@@ -79,7 +79,8 @@ def render_report(cases):
     return ('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">' \
         '<title>AbyssBench replay evidence</title><style>body{font:16px system-ui;background:#f4f6fa;color:#182538;margin:0 auto;padding:32px;max-width:1040px}' \
         'section{background:white;padding:24px;margin:24px 0;border-radius:8px}svg{display:block;width:100%;height:auto}svg text{font:12px system-ui}' \
-        'table{border-collapse:collapse}td,th{padding:6px 12px;border-bottom:1px solid #ddd}.pass{color:#00705c}.fail{color:#b32626}.inconclusive{color:#755415}' \
+        'table{border-collapse:collapse}details{overflow-x:auto}td,th{padding:6px 12px;border-bottom:1px solid #ddd}.pass{color:#00705c}.fail{color:#b32626}.inconclusive{color:#755415}' \
+        '.chart{overflow-x:auto}@media(max-width:600px){body{padding:16px}section{padding:16px}h2{font-size:20px}svg{min-width:700px}}' \
         '</style><h1>AbyssBench — controller replay</h1><p><strong>Simulation only.</strong> Synthetic inputs; illustrative uncalibrated fluid model. '
         'Command issuance does not prove mechanical motion. No physical qualification, live model campaign, or practitioner adoption is claimed.</p>' \
         '<p>Same fault schedule: compare freshness_receive with repaired. Clock: single monotonic integer ms. '

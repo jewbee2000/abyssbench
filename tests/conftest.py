@@ -1,5 +1,6 @@
 """Executed evidence, not a generated expected-value oracle."""
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -25,4 +26,4 @@ def pytest_sessionfinish(session, exitstatus):
               'source': metadata(), 'input_hash': tree_hash('tests/oracle'),
               'oracle_hash': tree_hash('tests'), 'results': [dict(r, requirement_ids=items.get(r['nodeid'], [])) for r in reports]}
     output['result_hash'] = sha256(json.dumps(output['results'], sort_keys=True).encode())
-    Path('evidence/acceptance-run.json').write_text(json.dumps(output, indent=2))
+    Path(os.environ.get('AB_EVIDENCE_PATH', 'evidence/acceptance-run.json')).write_text(json.dumps(output, indent=2))

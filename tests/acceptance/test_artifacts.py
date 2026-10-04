@@ -28,6 +28,27 @@ def test_incomplete_writer_and_corruption(tmp_path):
         verify(directory)
 
 
+@pytest.mark.requirements('AB-10')
+def test_abrupt_recorder_process_exit_is_incomplete(tmp_path):
+    directory = tmp_path / 'killed-writer'
+    program = ("from abyssbench.recording import Recorder\nimport sys\n"
+               f"r=Recorder({str(directory)!r}, {{'seed':0}})\n"
+               "r.write('partial.json','{}')\nprint('ready',flush=True)\nsys.stdin.read()\n")
+    child = subprocess.Popen([sys.executable, '-c', program], stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    try:
+        assert child.stdout.readline().strip() == 'ready'
+        child.terminate()
+        child.wait(timeout=5)
+        with pytest.raises(InputError):
+            verify(directory)
+        assert json.loads((directory / 'manifest.json').read_text())['status'] == 'incomplete'
+    finally:
+        if child.poll() is None:
+            child.kill()
+        child.communicate(timeout=5)
+
+
 @pytest.mark.requirements('AB-10', 'AB-12')
 def test_demo_manifest_and_replay(tmp_path):
     output = tmp_path / 'demo'

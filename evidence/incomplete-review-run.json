@@ -1,0 +1,110 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines",
+    "tests/acceptance/test_artifacts.py",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "source": {
+    "code_commit": "6a48bf0cf75b95ea2b860c5561f0b3a1e4dffdc2",
+    "dirty_tree": true,
+    "diff_hash": "bd500ba73f221925e29eb97398f15c684b07e68cd840b19f25949fa47cb7a0a5",
+    "code_hash": "69f3d8526e1a63ef8ce32a4b6779c511a8fc26a63ae009eb212a75bd39fa3d73",
+    "oracle_hash": "90eaa0fc1a54ce97057331d7be899219bccadb24ecb83f3f24b9a0607b8c4c16",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "90eaa0fc1a54ce97057331d7be899219bccadb24ecb83f3f24b9a0607b8c4c16",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_incomplete_writer_and_corruption",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-10"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-10"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_demo_manifest_and_replay",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-10",
+        "AB-12"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_offline_egress_and_html_escape",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-21"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[valid-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[violating-1]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_cli_statuses[incomplete-2]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-19"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_oversize_and_timeout",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-20"
+      ]
+    }
+  ],
+  "result_hash": "530e3cc9683b1d9e74383751390950aeb143fc9b157341ea5ab136256198af1d"
+}

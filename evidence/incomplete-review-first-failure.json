@@ -1,0 +1,53 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines",
+    "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
+    "--tb=short"
+  ],
+  "exit_code": 1,
+  "source": {
+    "code_commit": "6a48bf0cf75b95ea2b860c5561f0b3a1e4dffdc2",
+    "dirty_tree": true,
+    "diff_hash": "f2286d6696944b2ec221d1be45d2cade77aca51138b77b9704b2e509fd1b0000",
+    "code_hash": "37149954e5706ccabb54d98ee7e1ccecd98299db40c41fe61ac89a383cb0beb5",
+    "oracle_hash": "4a9051e62dafd50375a243d7a413dd999bc647fb14e48c737f70c65f3de52899",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "4a9051e62dafd50375a243d7a413dd999bc647fb14e48c737f70c65f3de52899",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_artifacts.py::test_abrupt_recorder_process_exit_is_incomplete",
+      "phase": "call",
+      "outcome": "failed",
+      "requirement_ids": [
+        "AB-10"
+      ]
+    }
+  ],
+  "result_hash": "321a4f5d54fe5c4529f98da63ae4ee731e3402324f2e5a6895d72919c26fe334"
+}

@@ -1,12 +1,28 @@
 import copy
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 
-from abyssbench import InputError, monitor, read_csv, read_jsonl
+from abyssbench import InputError, monitor, read_csv, read_jsonl, run
 
 FIXTURES = Path(__file__).parents[1] / 'oracle'
+
+
+@pytest.mark.requirements('AB-17')
+def test_generic_import_has_no_fluid_model_dependency():
+    result = subprocess.run([sys.executable, '-c', "import sys; from abyssbench import monitor, read_jsonl; assert 'abyssbench.runner' not in sys.modules; assert 'abyssbench.controller' not in sys.modules"], capture_output=True, text=True, check=False)
+    assert result.returncode == 0, result.stderr
+
+
+@pytest.mark.requirements('AB-16')
+def test_sparse_fluid_ticks_cannot_prove_deadlines():
+    events = [e for e in run() if not (e['kind'] == 'tick' and e['time_ms'] == 100)]
+    for sequence, e in enumerate(events):
+        e['sequence'] = sequence
+    assert monitor(events, profile='fluid')['status'] == 'inconclusive'
 
 
 @pytest.mark.requirements('AB-13')
