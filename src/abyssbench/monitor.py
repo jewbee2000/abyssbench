@@ -171,7 +171,9 @@ def fluid(ledger, rows):
         ledger.init(f'I{i:02}')
     ticks = ledger.by_kind['tick']
     tick_times = [e['time_ms'] for e in ticks]
-    if any(b-a != 10 for a, b in pairwise(tick_times)):
+    if tick_times and (tick_times[0] != ledger.events[0]['time_ms'] or
+                       tick_times[-1] != ledger.end or
+                       any(b-a != 10 for a, b in pairwise(tick_times))):
         for identity in ('I02', 'I03', 'I04', 'I05', 'I08', 'I12'):
             ledger.mark(identity, 'inconclusive', {'reason': 'missing or irregular 10 ms controller tick evidence'})
     required = {'pressure1': 'Pa', 'pressure2': 'Pa', 'flow': 'm3/s'}

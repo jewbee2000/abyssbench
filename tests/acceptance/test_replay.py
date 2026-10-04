@@ -18,8 +18,9 @@ def test_generic_import_has_no_fluid_model_dependency():
 
 
 @pytest.mark.requirements('AB-16')
-def test_sparse_fluid_ticks_cannot_prove_deadlines():
-    events = [e for e in run() if not (e['kind'] == 'tick' and e['time_ms'] == 100)]
+@pytest.mark.parametrize('missing_tick', [0, 100, 1500])
+def test_sparse_fluid_ticks_cannot_prove_deadlines(missing_tick):
+    events = [e for e in run() if not (e['kind'] == 'tick' and e['time_ms'] == missing_tick)]
     for sequence, e in enumerate(events):
         e['sequence'] = sequence
     assert monitor(events, profile='fluid')['status'] == 'inconclusive'

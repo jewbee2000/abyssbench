@@ -1,0 +1,59 @@
+{
+  "command": [
+    "C:\\Users\\Walt\\Documents\\Codex\\2026-10-03\\g\\outputs\\projects\\abyssbench\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines"
+  ],
+  "exit_code": 0,
+  "source": {
+    "code_commit": "0ad89c351eb1ce3d91c7741df37c30be7a9696a9",
+    "dirty_tree": true,
+    "diff_hash": "56a34f17ea8bb160f71ab3b005356ec04f1a371259cfc59a5957969bd3355d34",
+    "code_hash": "942983b8cd0e3ebdd844d85fd9e8c8ede9442ae41fda274a9973c69580040c02",
+    "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+    "lock_hash": "f236909db67748ca6fc56a877356a63c445f4fbb06c30f9ac17ff1b58f6092d5",
+    "model_parameters": {
+      "compliance": 1e-08,
+      "pump_conductance": 1e-10,
+      "max_head_Pa": 300000,
+      "pump_tau_ms": 100,
+      "valve_tau_ms": 200,
+      "K_m3_s": 2e-05,
+      "P_ref_Pa": 100000
+    },
+    "recipe_hash": "4de77ba08118a061e092ec6ff0fff8f8d5d98ec645f0410478223a81348e37ff",
+    "event_schema_version": 1,
+    "controller_version": "fluid-v1"
+  },
+  "input_hash": "68709f9564050542d7117e2ebac3a6a0ee792d8272878bcc9735bc4b8d111d01",
+  "oracle_hash": "d606b4be8408c0744c3d730da0e18398208132223d8be5259bffea99df1f99a9",
+  "results": [
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[0]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[100]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    },
+    {
+      "nodeid": "tests/acceptance/test_replay.py::test_sparse_fluid_ticks_cannot_prove_deadlines[1500]",
+      "phase": "call",
+      "outcome": "passed",
+      "requirement_ids": [
+        "AB-16"
+      ]
+    }
+  ],
+  "result_hash": "1018e784c56ee83d8ab90c69919cda02b6872d840183644492e97e7f680a0032"
+}
