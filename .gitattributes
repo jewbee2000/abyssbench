@@ -1,3 +1,6 @@
 * text=auto eol=lf
 *.stl binary
 *.step binary
+# Archived evidence hashes identify exact bytes across Git checkouts.
+# CRLF is legitimate captured output; still check other trailing whitespace.
+evidence/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

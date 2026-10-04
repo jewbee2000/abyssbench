@@ -4,7 +4,7 @@ _______________ test_all_state_event_pairs[fault-disconnected] ________________
 tests\acceptance\test_contract.py:63: in test_all_state_event_pairs
     assert result.state == ORACLE['state_table'][state][index]
 E   AssertionError: assert 'disconnected' == 'fault'
-E     
+E
 E     - fault
 E     + disconnected
 ============================== warnings summary ===============================

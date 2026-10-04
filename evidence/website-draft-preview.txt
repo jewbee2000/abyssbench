@@ -2,7 +2,7 @@ Configuration file: C:/Users/Walt/Documents/Codex/2026-10-03/g/outputs/website-d
             Source: C:/Users/Walt/Documents/Codex/2026-10-03/g/outputs/website-drafts
        Destination: ../projects/abyssbench/artifacts/website-draft-preview
  Incremental build: disabled. Enable with --incremental
-      Generating... 
+      Generating...
        Jekyll Feed: Generating feed for posts
          AutoPages: Disabled/Not configured in site.config.
         Pagination: Complete, processed 1 pagination page(s)
@@ -44,6 +44,6 @@ _includes/svg/nav-arrow-down.svg     |     1 |   0.25K | 0.000
 _includes/svg/github.svg             |     1 |   0.54K | 0.000
 _includes/svg/cv-circled.svg         |     1 |   0.69K | 0.000
 
- 
+
                     done in 1.525 seconds.
  Auto-regeneration: disabled. Use --watch to enable.
