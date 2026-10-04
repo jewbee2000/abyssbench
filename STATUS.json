@@ -4,7 +4,9 @@
   "application_tests_run": true,
   "live_model_evaluation_run": false,
   "physical_validation_run": false,
-  "published": false,
+  "published": true,
+  "repository_url": "https://github.com/jewbee2000/abyssbench",
+  "article_published": false,
   "requirements_revision": "2026-10-04",
   "usefulness_validation": "installed_baseline_and_agent_executed_clean_consumer_verified; practitioner_adoption_unverified",
   "must_requirements_verified": 21,
@@ -13,5 +15,6 @@
   "fresh_wheel_checks_passed": 115,
   "should_disposition": "AB-18 OpenHTF passed; Parquet deferred",
   "evidence": "evidence/REQUIREMENT_EVIDENCE.md",
-  "limitations": "single clock; synthetic uncalibrated plant; trusted callbacks; Windows/Python 3.12 verified; no physical or live model validation"
+  "limitations": "single clock; synthetic uncalibrated plant; trusted callbacks; Windows/Python 3.12 verified; no physical or live model validation",
+  "next_milestone": "one useful external trace and one independent engineer trial; Windows/Python 3.12 CI is the next implementation task"
 }

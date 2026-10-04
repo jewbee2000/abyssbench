@@ -2,6 +2,8 @@
 
 Unpublished editorial draft; canonical copy is website-drafts/_drafts/abyssbench.md. Hosted links and editorial review remain pending; local Jekyll previews verified.
 
+2026-10-04 handoff update: the [project source](https://github.com/jewbee2000/abyssbench) is now public. The article body below records the earlier implementation handoff; its repository-publication wording and final links need editorial updating. The canonical website draft was not changed or pushed by the source-publication task.
+
 A machine that works once is satisfying. A machine that can explain why it stopped working is considerably more useful.
 
 For AbyssBench, I asked Codex to implement a controller replay tool from written requirements. The demonstration has a pump, an outlet valve, two pressure channels and a flow reading. All of them are simulated. That is enough machinery to create some fairly annoying timing problems without introducing plumbing into the development process.

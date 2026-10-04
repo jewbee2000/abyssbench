@@ -40,7 +40,7 @@ Full raw results: [acceptance-run.json](acceptance-run.json). Subsequent report-
 - Finite input limits: 20 MiB, 100000 events, 32 rules/cases, 60000 ms simulation, 60 s evaluation. Local 10000-event target passed; raw-library comparison does less work and is not a speedup baseline.
 - Clean consumer setup uses a fresh venv with the existing package cache. Agent-executed failure/correction is not independent practitioner adoption.
 - Failed traces, first baseline failure and implementation failures remain in evidence/. No failing randomized sequence was found; the retained six seeded defects are deterministic negative controls.
-- Parquet deferred. C++, PLC, CAD, distributed clocks, hardware qualification and model campaigns excluded. Repository and article remain unpublished.
+- Parquet deferred. C++, PLC, CAD, distributed clocks, hardware qualification and model campaigns excluded. Source repository is public at https://github.com/jewbee2000/abyssbench; article remains unpublished.
 - Missing or irregular fluid controller ticks are inconclusive for timing claims. Abrupt recorder process termination leaves an incomplete durable manifest. Each run preserves its own source hashes.
 
-Local normal and explicit draft Jekyll builds passed, with desktop/mobile previews inspected. Publication still needs Walter's editorial review, actual hosted repository/evidence links and final link checks. No publication is authorized.
+Local normal and explicit draft Jekyll builds passed, with desktop/mobile previews inspected. Article publication still needs Walter's editorial review, the verified repository/evidence links and final link checks. Website publication is not authorized.

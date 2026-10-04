@@ -14,3 +14,14 @@ Check off only after recording executed evidence; see evidence/progress.md.
 Final checks: 116 full-suite passes (including 1000 configured Hypothesis examples), 115 installed-wheel passes with that property test deselected, Ruff, mypy and pip check. Commands, hashes, preserved failures and limitations are linked in evidence/REQUIREMENT_EVIDENCE.md.
 
 See IMPLEMENTATION_PLAN.md and docs/REQUIREMENTS.md.
+
+## Follow-up after source publication
+
+- [x] Push the project source with Walter's explicit authorization; verified public origin/main, website draft unchanged. See evidence/github-publication.json.
+- [ ] Add Windows/Python 3.12 GitHub Actions for the verified local checks and wheel/demo artifacts.
+- [ ] Replay one useful external trace with an independently specified expected verdict.
+- [ ] Record one independent engineer's fresh-checkout trial and actual feedback.
+- [ ] Fix friction demonstrated by that trial, then assess Linux support and a tagged wheel release.
+- [ ] Complete Walter's article review and verified-link update; publish only on a later explicit instruction.
+
+Walter's exact actions and suggested trial request are in docs/NEXT_STEPS.md.

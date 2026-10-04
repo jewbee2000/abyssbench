@@ -1,5 +1,10 @@
 # AbyssBench
 
+[Source repository](https://github.com/jewbee2000/abyssbench). The deterministic
+offline release is verified; the article remains unpublished. Follow
+[the next-step checklist](docs/NEXT_STEPS.md) for a real trace, an independent
+engineer's trial, and the next implementation work.
+
 A small offline controller replay and timing-contract integration for
 **pytest + RTAMT**, with optional OpenHTF record attachments. Import your event
 log or plug in a trusted Python controller; inspect requirement failures on a
@@ -83,6 +88,6 @@ The fluid equations are illustrative and uncalibrated. Software command
 issuance does not establish real actuator motion, functional safety, hard
 real-time behavior or lab qualification. Multi-clock reconstruction, PLC/C++
 adapters, hardware control, CAD and live-model campaigns are excluded. OpenHTF
-attachments work; optional Parquet is deferred. No hosted repository or
-published article is claimed. The [blog draft](docs/BLOG_DRAFT.md) remains
+attachments work; optional Parquet is deferred. The source repository was
+pushed with Walter's authorization on 2026-10-04. The [blog draft](docs/BLOG_DRAFT.md) remains
 unpublished. Code, fixtures and original docs are MIT licensed.

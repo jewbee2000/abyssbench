@@ -7,6 +7,11 @@ from abyssbench.recording import metadata, sha256
 
 
 def main():
+    status = json.loads(Path('STATUS.json').read_text())
+    source_published = status.get('published', False)
+    publication_note = ('Source repository is public at ' + status['repository_url'] +
+                        '; article remains unpublished.' if source_published else
+                        'Repository and article remain unpublished.')
     runs = []
     for name in ('acceptance-run.json', 'report-run.json', 'fresh-install-run.json'):
         path = Path('evidence') / name
@@ -36,8 +41,13 @@ def main():
     provenance = {'source': metadata(), 'runs': [{k: run[k] for k in ('file', 'command', 'exit_code', 'source', 'input_hash', 'oracle_hash', 'result_hash')} for run in runs],
                   'requirements': matrix,
                   'artifacts': {path.name: sha256(path.read_bytes()) for path in Path('evidence').glob('*.json') if path.name != 'release.json'},
+                  'publication_status': {'source_published': source_published,
+                                         'repository_url': status.get('repository_url'),
+                                         'article_published': status.get('article_published', False)},
                   'boundaries': ['software simulation only', 'agent-executed consumer; no practitioner feedback',
                                  'no generated-code or live-model execution', 'no hardware, push or publication']}
+    if source_published:
+        provenance['boundaries'][-1] = 'source push separately authorized; no hardware or website publication'
     Path('evidence/release.json').write_text(json.dumps(provenance, indent=2)+'\n')
     lines = ['# Executed requirement evidence', '',
              'All 21 applicable Must requirements have executed passing software checks. AB-18 is partially implemented: OpenHTF attachment passed; Parquet is explicitly deferred. No conditional live-model/CAD feature is enabled.', '',
@@ -56,9 +66,9 @@ def main():
                   '- Finite input limits: 20 MiB, 100000 events, 32 rules/cases, 60000 ms simulation, 60 s evaluation. Local 10000-event target passed; raw-library comparison does less work and is not a speedup baseline.',
                   '- Clean consumer setup uses a fresh venv with the existing package cache. Agent-executed failure/correction is not independent practitioner adoption.',
                   '- Failed traces, first baseline failure and implementation failures remain in evidence/. No failing randomized sequence was found; the retained six seeded defects are deterministic negative controls.',
-                  '- Parquet deferred. C++, PLC, CAD, distributed clocks, hardware qualification and model campaigns excluded. Repository and article remain unpublished.',
+                  '- Parquet deferred. C++, PLC, CAD, distributed clocks, hardware qualification and model campaigns excluded. ' + publication_note,
                   '- Missing or irregular fluid controller ticks are inconclusive for timing claims. Abrupt recorder process termination leaves an incomplete durable manifest. Each run preserves its own source hashes.', '',
-                  "Local normal and explicit draft Jekyll builds passed, with desktop/mobile previews inspected. Publication still needs Walter's editorial review, actual hosted repository/evidence links and final link checks. No publication is authorized."])
+                  "Local normal and explicit draft Jekyll builds passed, with desktop/mobile previews inspected. Article publication still needs Walter's editorial review, the verified repository/evidence links and final link checks. Website publication is not authorized."])
     Path('evidence/REQUIREMENT_EVIDENCE.md').write_text('\n'.join(lines)+'\n')
     document = Path('docs/REQUIREMENTS.md').read_text(encoding='utf-8')
     document = document.replace('Status: planned, not implemented.', 'Status: deterministic offline software verified; see evidence/REQUIREMENT_EVIDENCE.md.')
