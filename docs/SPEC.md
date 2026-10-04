@@ -21,6 +21,23 @@ Overpressure threshold is 200000 Pa. Missing heartbeat for more than 300 ms, sta
 
 Reconnect moves to recovery_required, never directly to running. Recovery requires valid inputs and no active fault cause continuously for 1000 ms, explicit acknowledgment of the old fault, then a separate arm and start. Fault history survives reconnect. A stop request always has priority over a start request at the same tick. A watchdog can command safe outputs but cannot claim to fix a mechanically stuck valve.
 
+## Independent monitor invariants
+
+The monitor must implement these twelve control assertions in addition to the broader acceptance requirements below. Evaluate them from event records without controller helper functions.
+
+1. Running is entered only from armed after an explicit valid start.
+2. Running cannot persist beyond one controller tick after any required input becomes invalid, pressure exceeds 200000 Pa, or a pressure reading falls outside 0–300000 Pa.
+3. Freshness uses sample time; age exactly 200 ms is valid, age greater than 200 ms is stale, and future timestamps are invalid.
+4. Every detected fault is followed by a pump-off command within 10 ms.
+5. Every detected fault is followed by an outlet-open command within 10 ms, regardless of whether the valve actually moves.
+6. Reconnection never transitions directly to running.
+7. The previous fault remains in the event history; recovery requires 1000 ms of valid inputs, acknowledgment, rearm, and a separate start.
+8. Heartbeat age greater than 300 ms latches a fault by the next controller tick.
+9. Exact duplicate command IDs are applied at most once; a changed payload under an existing ID is rejected.
+10. A command is valid through its expiry timestamp and rejected when the controller time is greater than expires_at_ms. Test issue+99, +100, and +101 ms for the standard 100 ms lifetime.
+11. Stop wins over start when both occur at the same tick.
+12. A valve position error greater than 0.2 lasting more than 500 ms latches a fault; equality at either boundary does not trigger that rule.
+
 ## Typed inputs and durable outputs
 
 Measurement fields: channel, value, unit, sample_time_ms, receive_time_ms, quality, sequence, calibration_id (synthetic identity). Command fields: command_id, type, payload, issued_at_ms, expires_at_ms. Recipe: version, preconditions, ordered steps, durations, setpoints, stop conditions, and maximum duration. Reject incompatible units and unknown recipe fields.
